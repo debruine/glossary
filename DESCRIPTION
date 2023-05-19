@@ -1,0 +1,22 @@
+Package: glossary
+Title: Add glossaries to markdown and quarto documents
+Version: 0.0.0.9000
+Authors@R: c(
+    person(
+        given = "Lisa", 
+        family = "DeBruine", 
+        role = c("aut", "cre"), 
+        email = "debruine@gmail.com", 
+        comment = c(ORCID = "0000-0002-7523-5539")
+    ))
+Description: Add glossaries to markdown and quarto documents by tagging individual words. Definitions can be provided inline or in a separate YAML file.
+License: CC BY 4.0
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.1
+Imports: 
+    kableExtra,
+    knitr
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
