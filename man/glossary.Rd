@@ -10,7 +10,7 @@ glossary(
   def = NULL,
   add_to_table = TRUE,
   show_def = FALSE,
-  path = glossary_options("path")
+  path = glossary_path()
 )
 }
 \arguments{

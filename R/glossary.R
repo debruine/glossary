@@ -20,20 +20,33 @@ glossary <- function(term,
                      def = NULL,
                      add_to_table = TRUE,
                      show_def = FALSE,
-                     path = glossary_options("path")) {
-  display # needs to be used before the term is changed
+                     path = glossary_path()) {
+  if (!is.character(term)) stop("The term must be a character string")
+  force(display) # needs to be used before the term is changed
 
-  if (is.null(def)) {
+  if (is.null(def) & !is.null(path)) {
     # look up definition from glossary file if not given
+    if (!file.exists(path)) {
+      stop("The file ", path, " does not exist")
+    }
+
     def <- tryCatch({
       gloss <- yaml::read_yaml(path)
-      index <- grep(term, gloss, ignore.case = TRUE)
+      index <- grep(term, names(gloss), ignore.case = TRUE)
       if (length(index)) term <- names(gloss)[index]
-      gloss[[index]]
+      trimws(gloss[[index]])
     },
     error = function(e) {
       return("")
     })
+  }
+
+  ## escape definition for display and check
+  def <- gsub("'", "\\'", def, fixed = TRUE)
+  if (length(def) == 0) def <- ""
+  if (trimws(def) == "") {
+    warning("The definition for \"", term,
+            "\" was not found in ", path, call. = FALSE)
   }
 
   ## add to global glossary for this book

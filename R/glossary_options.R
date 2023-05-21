@@ -49,3 +49,43 @@ glossary_options <- function (...) {
             call. = FALSE)
   }
 }
+
+#' Reset glossary table
+#'
+#' Resets the list .myglossary in the parent environment that collects glossary entries for the table
+#'
+#' @return NULL
+#' @export
+#'
+#' @examples
+#' glossary_reset()
+#'
+glossary_reset <- function() {
+  glossary_options(table = list())
+}
+
+
+#' Set or get the default glossary path
+#'
+#' @param path the path to the glossary file
+#'
+#' @return path string if path is NULL
+#' @export
+#'
+#' @examples
+#' glossary_path() # get current path
+glossary_path <- function(path = NULL) {
+  # get path
+  if (is.null(path)) {
+    return(glossary_options("path"))
+  }
+
+  # create file if necessary
+  if (!file.exists(path)) {
+    write("term: |\n  definition\n", path)
+    message(path, " does not exist; it has been created")
+  }
+
+  # set path
+  glossary_options(path = path)
+}
