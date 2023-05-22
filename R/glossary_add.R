@@ -42,7 +42,7 @@ glossary_add <- function(term,
 
 write_yaml <- function(x, file) {
   indent <- gsub("\n", "\n  ", x)
-  x2 <- paste0(names(x), ": |-\n  ", indent)
+  x2 <- paste0(names(x), ": |\n  ", indent)
   yaml <- paste(x2, collapse = "\n")
   write(yaml, file)
 }

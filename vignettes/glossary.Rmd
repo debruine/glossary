@@ -29,18 +29,18 @@ Set the default path to the definition file.
 glossary_path("glossary.yml")
 ```
 
-You can store definitions in a YAML file like this:
+You can store definitions in a YAML file. Use markdown to create paragraphs, links, and lists. Make sure each new line in a definition is indented two spaces (sorry YAML is a bit picky, but it's the best human-editable solution).
 
 ```
-SESOI: |-
+SESOI: |
   Smallest Effect Size of Interest: the smallest effect that is theoretically or practically meaningful
 
   See [Equivalence Testing for Psychological Research](https://doi.org/10.1177/2515245918770963) for a tutorial on methods for choosing an SESOI.
-p-value: |-
+p-value: |
   The probability of the observed data, or more extreme data, if the null hypothesis is true. The lower the p-value, the higher the test statistic, and less likely it is to observe the data if the null hypothesis is true.
 ```
 
-Alternatively, you can add definitions to the file with code.
+Alternatively, you can add definitions to the file with code. You don't need to indent new lines if you add definitions this way.
 
 ```{r, eval = FALSE}
 glossary_add(term = "power",
