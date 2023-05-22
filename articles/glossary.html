@@ -94,14 +94,18 @@
 <p>Set the default path to the definition file.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/glossary_path.html">glossary_path</a></span><span class="op">(</span><span class="st">"glossary.yml"</span><span class="op">)</span></span></code></pre></div>
-<p>You can store definitions in a YAML file like this:</p>
-<pre><code>SESOI: |-
+<p>You can store definitions in a YAML file. Use markdown to create
+paragraphs, links, and lists. Make sure each new line in a definition is
+indented two spaces (sorry YAML is a bit picky, but it’s the best
+human-editable solution).</p>
+<pre><code>SESOI: |
   Smallest Effect Size of Interest: the smallest effect that is theoretically or practically meaningful
 
   See [Equivalence Testing for Psychological Research](https://doi.org/10.1177/2515245918770963) for a tutorial on methods for choosing an SESOI.
-p-value: |-
+p-value: |
   The probability of the observed data, or more extreme data, if the null hypothesis is true. The lower the p-value, the higher the test statistic, and less likely it is to observe the data if the null hypothesis is true.</code></pre>
-<p>Alternatively, you can add definitions to the file with code.</p>
+<p>Alternatively, you can add definitions to the file with code. You
+don’t need to indent new lines if you add definitions this way.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glossary_add</span>(<span class="at">term =</span> <span class="st">"power"</span>,</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">def =</span> <span class="st">"The probability of rejecting the null hypothesis when it is false, for a specific analysis, effect size, sample size, and criteria for significance."</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="st">")</span></span></code></pre></div>
@@ -146,10 +150,10 @@ a.glossary {
 <ul>
 <li><p>Look up a term from the glossary file with
 <code>glossary("alpha")</code>:
-<a class="glossary" title="The threshold chosen in Neyman-Pearson hypothesis testing to distinguish test results that lead to the decision to reject the null hypothesis, or not, based on the desired upper bound of the Type 1 error rate. An alpha level of 5% it most commonly used, but other alpha levels can be used as long as they are determined and preregistered by the researcher before the data is analyzed.">alpha</a></p></li>
+<a class="glossary" title="The threshold chosen in Neyman-Pearson hypothesis testing to distinguish test results that lead to the decision to reject the null hypothesis, or not, based on the desired upper bound of the Type 1 error rate. An alpha level of 5% is most commonly used, but other alpha levels can be used as long as they are determined and preregistered by the researcher before the data is analyzed.">alpha</a></p></li>
 <li><p>Display a different value for the term with
 <code>glossary("alpha", "$\\alpha$")</code>:
-<a class="glossary" title="The threshold chosen in Neyman-Pearson hypothesis testing to distinguish test results that lead to the decision to reject the null hypothesis, or not, based on the desired upper bound of the Type 1 error rate. An alpha level of 5% it most commonly used, but other alpha levels can be used as long as they are determined and preregistered by the researcher before the data is analyzed."><span class="math inline">\(\alpha\)</span></a></p></li>
+<a class="glossary" title="The threshold chosen in Neyman-Pearson hypothesis testing to distinguish test results that lead to the decision to reject the null hypothesis, or not, based on the desired upper bound of the Type 1 error rate. An alpha level of 5% is most commonly used, but other alpha levels can be used as long as they are determined and preregistered by the researcher before the data is analyzed."><span class="math inline">\(\alpha\)</span></a></p></li>
 <li><p>Use an inline definition instead of the glossary file with
 <code>glossary("beta", def = "The second letter of the Greek alphabet")</code>:
 <a class="glossary" title="The second letter of the Greek alphabet">beta</a></p></li>
@@ -186,7 +190,7 @@ alpha
 The threshold chosen in Neyman-Pearson hypothesis testing to distinguish
 test results that lead to the decision to reject the null hypothesis, or
 not, based on the desired upper bound of the Type 1 error rate. An alpha
-level of 5% it most commonly used, but other alpha levels can be used as
+level of 5% is most commonly used, but other alpha levels can be used as
 long as they are determined and preregistered by the researcher before
 the data is analyzed.
 </td>
