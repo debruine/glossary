@@ -1,7 +1,7 @@
 test_that("errors", {
   # set up path to example glossary file
   path <- system.file("glossary.yml", package = "glossary")
-  glossary_options(path = path)
+  glossary_path(path)
 
   expect_error(glossary(path = NULL),
                "argument \"term\" is missing, with no default",
@@ -21,7 +21,7 @@ test_that("errors", {
 
 test_that("no path", {
   glossary_reset()
-  glossary_options(path = NULL)
+  glossary_path(NULL)
 
   expect_warning( test <- glossary("hi") )
   exp <- "<a class='glossary' title=''>hi</a>"
@@ -42,7 +42,7 @@ test_that("no path", {
   exp <- list(hi = "greeting")
   expect_equal(test, exp)
 
-  test <- glossary("hi", def = "greeting", show_def = TRUE)
+  test <- glossary("hi", def = "greeting", show = "def")
   exp <- "greeting"
   expect_equal(test, exp)
 
@@ -90,6 +90,6 @@ test_that("tricky entries", {
 
   # entry with single quotes
   test <- glossary("effect size")
-  exp <- "<a class='glossary' title='\\'quantitative reflection of the magnitude of some phenomenon that is used for the purpose of addressing a question of interest\\' (Kelley & Preacher, 2012)'>effect size</a>"
+  exp <- "<a class='glossary' title='&#39;quantitative reflection of the magnitude of some phenomenon that is used for the purpose of addressing a question of interest&#39; (Kelley &amp; Preacher, 2012)'>effect size</a>"
   expect_equal(test, exp)
 })

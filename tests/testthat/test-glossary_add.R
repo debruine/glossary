@@ -20,4 +20,17 @@ test_that("x", {
   test <- glossary("new")
   exp <- "<a class='glossary' title='Not ancient'>new</a>"
   expect_equal(test, exp)
+
+  # markdown
+  definition <- "This is a paragraph with a [link](https://url.com).
+
+And another paragraph before a list:
+
+* Item 1
+* List 2"
+  glossary_add("html", definition)
+
+  test <- glossary("html")
+  exp <- "<a class='glossary' title='This is a paragraph with a link.  And another paragraph before a list:   Item 1 List 2'>html</a>"
+  expect_equal(test, exp)
 })

@@ -8,6 +8,14 @@
 #' @return NULL
 #' @export
 #'
+#' @examples
+#' \dontrun{
+#' # make a new glossary file
+#' glossary_path("glossary.yml")
+#'
+#' glossary_add("joins", "Ways to combine data from two tables")
+#'
+#' }
 glossary_add <- function(term,
                          definition,
                          path = glossary_path(),
@@ -26,7 +34,15 @@ glossary_add <- function(term,
 
   # add term
   gloss[[term]] <- definition
-  yaml::write_yaml(gloss, path)
+  write_yaml(gloss, path)
 
   invisible(NULL)
+}
+
+
+write_yaml <- function(x, file) {
+  indent <- gsub("\n", "\n  ", x)
+  x2 <- paste0(names(x), ": |-\n  ", indent)
+  yaml <- paste(x2, collapse = "\n")
+  write(yaml, file)
 }

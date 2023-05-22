@@ -1,13 +1,17 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# glossary
+# glossary <a href="https://debruine.github.io/glossary/"><img src="man/figures/logo.png" align="right" height="120" /></a>
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of glossary is to provide a lightweight solution for making
-glossaries in educational materials written in quarto or R Markdown.
+There is a lot of necessary jargon to learn for coding. The goal of
+glossary is to provide a lightweight solution for making glossaries in
+educational materials written in quarto or R Markdown. This package
+provides functions to link terms in text to their definitions in an
+external glossary file, as well as create a glossary table of all linked
+terms at the end of a section.
 
 ## Installation
 
@@ -19,69 +23,33 @@ You can install the development version of glossary from
 devtools::install_github("debruine/glossary")
 ```
 
-## Quick Start
+## Example
 
-### Setup
+Hover over the terms to see a popup definition.
 
 ``` r
 library(glossary)
-```
-
-### Definition File
-
-Set the default path to the definition file.
-
-``` r
 glossary_path("inst/glossary.yml")
-```
-
-You can store definitions in a YAML file like this:
-
-    alpha: |
-      The threshold chosen in Neyman-Pearson hypothesis testing to distinguish test results that lead to the decision to reject the null hypothesis, or not, based on the desired upper bound of the Type 1 error rate. An alpha level of 5% it most commonly used, but other alpha levels can be used as long as they are determined and preregistered by the researcher before the data is analyzed.
-    p-value: |
-      The probability of the observed data, or more extreme data, if the null hypothesis is true. The lower the p-value, the higher the test statistic, and less likely it is to observe the data if the null hypothesis is true.
-
-### Style
-
-Set a glossary entry style like this at the top of your document (set
-the code chunk to `results='asis'`).
-
-``` r
-glossary_style(color = "green", text_decoration = "purple underline")
+glossary_style("purple", "underline")
 ```
 
 <style>
 a.glossary {
-  color: green;
-  text-decoration: purple underline;
+  color: purple;
+  text-decoration: underline;
+  cursor: help;
 }
 </style>
 
-### In-Text Terms
-
-Hover over the highlighted terms to see the definition.
-
-Look up a term from the glossary file with `glossary("alpha")`:
+To calculate
+<a class='glossary' title='The probability of rejecting the null hypothesis when it is false, for a specific analysis, effect size, sample size, and criteria for significance.'>power</a>,
+you need to know the intended sample size, expected
+<a class='glossary' title='&#39;quantitative reflection of the magnitude of some phenomenon that is used for the purpose of addressing a question of interest&#39; (Kelley &amp; Preacher, 2012)'>effect
+size</a> (e.g.,
+<a class='glossary' title='Smallest Effect Size of Interest: the smallest effect that is theoretically or practically meaningful  See Equivalence Testing for Psychological Research for a tutorial on methods for choosing an SESOI.'>SESOI</a>),
+and
 <a class='glossary' title='The threshold chosen in Neyman-Pearson hypothesis testing to distinguish test results that lead to the decision to reject the null hypothesis, or not, based on the desired upper bound of the Type 1 error rate. An alpha level of 5% it most commonly used, but other alpha levels can be used as long as they are determined and preregistered by the researcher before the data is analyzed.'>alpha</a>
-
-Display a different value for the term with
-`glossary("alpha", "$\\alpha$")`:
-<a class='glossary' title='The threshold chosen in Neyman-Pearson hypothesis testing to distinguish test results that lead to the decision to reject the null hypothesis, or not, based on the desired upper bound of the Type 1 error rate. An alpha level of 5% it most commonly used, but other alpha levels can be used as long as they are determined and preregistered by the researcher before the data is analyzed.'>$\alpha$</a>
-
-Use an inline definition instead of the glossary file with
-`glossary("beta", def = "The second letter of the Greek alphabet")`:
-<a class='glossary' title='The second letter of the Greek alphabet'>beta</a>
-
-Just show the definition with `glossary("p-value", show_def = TRUE)`:
-The probability of the observed data, or more extreme data, if the null
-hypothesis is true. The lower the p-value, the higher the test
-statistic, and less likely it is to observe the data if the null
-hypothesis is true.
-
-### Glossary Table
-
-Show the table of terms defined on this page with `glossary_table()`:
+criterion.
 
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -110,24 +78,41 @@ the data is analyzed.
 </tr>
 <tr>
 <td style="text-align:left;">
-beta
+effect size
 </td>
 <td style="text-align:left;">
-The second letter of the Greek alphabet
+‘quantitative reflection of the magnitude of some phenomenon that is
+used for the purpose of addressing a question of interest’ (Kelley &
+Preacher, 2012)
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-p-value
+power
 </td>
 <td style="text-align:left;">
-The probability of the observed data, or more extreme data, if the null
-hypothesis is true. The lower the p-value, the higher the test
-statistic, and less likely it is to observe the data if the null
-hypothesis is true.
+The probability of rejecting the null hypothesis when it is false, for a
+specific analysis, effect size, sample size, and criteria for
+significance.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SESOI
+</td>
+<td style="text-align:left;">
+
+Smallest Effect Size of Interest: the smallest effect that is
+theoretically or practically meaningful
+
+See [Equivalence Testing for Psychological
+Research](https://doi.org/10.1177/2515245918770963) for a tutorial on
+methods for choosing an SESOI.
 </td>
 </tr>
 </tbody>
 </table>
 
-Reset the glossary table between sections with `glossary_reset()`.
+See [getting
+started](https://debruine.github.io/glossary/articles/glossary.html) for
+more details.

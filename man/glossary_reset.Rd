@@ -7,9 +7,10 @@
 glossary_reset()
 }
 \description{
-Resets the list .myglossary in the parent environment that collects glossary entries for the table
+Resets the list that collects glossary entries for the table
 }
 \examples{
+\dontrun{
 glossary_reset()
-
+}
 }

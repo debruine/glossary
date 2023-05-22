@@ -15,17 +15,4 @@ a list of options, values of an option, or nothing
 \description{
 Global glossary options are used, for example, to set the default separator for cell names.
 }
-\examples{
-
-glossary_options() # see all options
-
-glossary_options("path") # see value of glossary.path
-
-\dontrun{
-# changes default path
-glossary_options(path = "gloss.yml")
-
-# changes back to default
-glossary_options(path = "include/glossary.yml")
-}
-}
+\keyword{internal}

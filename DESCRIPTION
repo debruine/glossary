@@ -17,9 +17,13 @@ RoxygenNote: 7.2.1
 Imports: 
     kableExtra,
     knitr,
+    markdown,
     yaml
 Suggests: 
+    rmarkdown,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
-URL: https://github.com/debruine/glossary
+URL: https://github.com/debruine/glossary,
+    https://debruine.github.io/glossary/
 BugReports: https://github.com/debruine/glossary/issues
+VignetteBuilder: knitr

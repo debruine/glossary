@@ -14,12 +14,12 @@ knitr::opts_chunk$set(
 )
 ```
 
-# glossary
+# glossary <a href="https://debruine.github.io/glossary/"><img src="man/figures/logo.png" align="right" height="120" /></a>
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of glossary is to provide a lightweight solution for making glossaries in educational materials written in quarto or R Markdown.
+There is a lot of necessary jargon to learn for coding. The goal of glossary is to provide a lightweight solution for making glossaries in educational materials written in quarto or R Markdown. This package provides functions to link terms in text to their definitions in an external glossary file, as well as create a glossary table of all linked terms at the end of a section.
 
 ## Installation
 
@@ -30,59 +30,22 @@ You can install the development version of glossary from [GitHub](https://github
 devtools::install_github("debruine/glossary")
 ```
 
-## Quick Start
+## Example
 
-### Setup
-
-```{r}
-library(glossary)
-```
-
-### Definition File
-
-Set the default path to the definition file.
-
-```{r}
-glossary_path("inst/glossary.yml")
-```
-
-You can store definitions in a YAML file like this:
-
-```
-alpha: |
-  The threshold chosen in Neyman-Pearson hypothesis testing to distinguish test results that lead to the decision to reject the null hypothesis, or not, based on the desired upper bound of the Type 1 error rate. An alpha level of 5% it most commonly used, but other alpha levels can be used as long as they are determined and preregistered by the researcher before the data is analyzed.
-p-value: |
-  The probability of the observed data, or more extreme data, if the null hypothesis is true. The lower the p-value, the higher the test statistic, and less likely it is to observe the data if the null hypothesis is true.
-```
-
-### Style
-
-Set a glossary entry style like this at the top of your document (set the code chunk to `results='asis'`).
+Hover over the terms to see a popup definition.
 
 ```{r, results='asis'}
-glossary_style(color = "green", text_decoration = "purple underline")
+library(glossary)
+glossary_path("inst/glossary.yml")
+glossary_style("purple", "underline")
 ```
 
-### In-Text Terms
+To calculate `r glossary("power")`, you need to know the intended sample size, expected `r glossary("effect size")` (e.g., `r glossary("SESOI")`), and `r glossary("alpha")` criterion.
 
-Hover over the highlighted terms to see the definition.
-
-Look up a term from the glossary file with `glossary("alpha")`: `r glossary("alpha")`
-
-Display a different value for the term with `glossary("alpha", "$\\alpha$")`: `r glossary("alpha", "$\\alpha$")`
-
-Use an inline definition instead of the glossary file with `glossary("beta", def = "The second letter of the Greek alphabet")`: `r glossary("beta", def = "The second letter of the Greek alphabet")`
-
-Just show the definition with `glossary("p-value", show_def = TRUE)`: `r glossary("p-value", show_def = TRUE)`
-
-### Glossary Table
-
-Show the table of terms defined on this page with `glossary_table()`:
 
 ```{r, echo = FALSE}
 glossary_table()
 ```
 
-Reset the glossary table between sections with `glossary_reset()`.
-
+See [getting started](https://debruine.github.io/glossary/articles/glossary.html) for more details.
 

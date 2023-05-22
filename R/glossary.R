@@ -4,7 +4,7 @@
 #' @param display The display (if different than the term)
 #' @param def The short definition to display on hover and in the glossary table; if NULL, this will be looked up from the glossary.yml file
 #' @param add_to_table whether to add to the table created by glossary_table()
-#' @param show_def whether to show the definition or just the term
+#' @param show whether to show term with definition on hover (default), or just the term or just the definition
 #' @param path the path to the glossary file
 #'
 #' @return string with the link and hover text
@@ -14,12 +14,13 @@
 #' glossary("alpha")
 #' glossary("alpha", "$\\alpha$")
 #' glossary("alpha", def = "The first letter of the Greek alphabet")
-#' glossary("alpha", show_def = TRUE)
+#' glossary("alpha", show = "term")
+#' glossary("alpha", show = "def")
 glossary <- function(term,
                      display = term,
                      def = NULL,
                      add_to_table = TRUE,
-                     show_def = FALSE,
+                     show = c("term", "def"),
                      path = glossary_path()) {
   if (!is.character(term)) stop("The term must be a character string")
   force(display) # needs to be used before the term is changed
@@ -41,8 +42,7 @@ glossary <- function(term,
     })
   }
 
-  ## escape definition for display and check
-  def <- gsub("'", "\\'", def, fixed = TRUE)
+  ## definition checks
   if (length(def) == 0) def <- ""
   if (trimws(def) == "") {
     warning("The definition for \"", term,
@@ -56,11 +56,21 @@ glossary <- function(term,
     glossary_options(table = tbl)
   }
 
-  if (show_def) {
+  if (all(show == "def")) {
     def # just show the definition
+  } else if (all(show == "term")) {
+    paste0("<a class='glossary'>", display, "</a>") # just show the term
   } else {
-    # just add the tooltip and don't link to the definition webpage
-    paste0("<a class='glossary' title='", def, "'>", display, "</a>")
+    # show the term with the tooltip
+    cleandef <- markdown::markdownToHTML(
+      text = def,
+      options = c("smartypants",
+                  "fragment_only")
+    )
+    cleandef <- gsub("<.*?>", "", cleandef)
+    cleandef <- gsub("\n", " ", trimws(cleandef))
+
+    paste0("<a class='glossary' title='", cleandef, "'>", display, "</a>")
   }
 }
 

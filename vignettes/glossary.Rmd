@@ -1,0 +1,89 @@
+---
+title: "glossary"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{glossary}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Setup
+
+```{r setup}
+library(glossary)
+```
+
+
+## Definition File
+
+Set the default path to the definition file.
+
+```{r}
+glossary_path("glossary.yml")
+```
+
+You can store definitions in a YAML file like this:
+
+```
+alpha: |
+  The threshold chosen in Neyman-Pearson hypothesis testing to distinguish test results that lead to the decision to reject the null hypothesis, or not, based on the desired upper bound of the Type 1 error rate. An alpha level of 5% it most commonly used, but other alpha levels can be used as long as they are determined and preregistered by the researcher before the data is analyzed.
+p-value: |
+  The probability of the observed data, or more extreme data, if the null hypothesis is true. The lower the p-value, the higher the test statistic, and less likely it is to observe the data if the null hypothesis is true.
+```
+
+## Style
+
+By default, the in-text glossary terms will be styled like other links in your document. You can set a different style at the top of your document (set the code chunk to `results='asis'`).
+
+```{r, results='asis'}
+glossary_style(color = "green", text_decoration = "purple underline")
+```
+
+Alternatively, you can add your own CSS to your document to create a more customised appearance.
+
+```{css}
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap');
+
+a.glossary {
+  color: green;
+  text-decoration: purple underline;
+  font-family: "Fira Code", monospace;
+  cursor: help;
+}
+</style>
+```
+
+## In-Text Terms
+
+Hover over the highlighted terms to see the definition.
+
+* Look up a term from the glossary file with `glossary("alpha")`: `r glossary("alpha")`
+
+* Display a different value for the term with `glossary("alpha", "$\\alpha$")`: `r glossary("alpha", "$\\alpha$")`
+
+* Use an inline definition instead of the glossary file with `glossary("beta", def = "The second letter of the Greek alphabet")`: `r glossary("beta", def = "The second letter of the Greek alphabet")`
+
+* Just show the term (no hover) with `glossary("effect size", show = "term")`: `r glossary("effect size", show = "term")`
+
+* Just show the definition with `glossary("p-value", show = "def")`: `r glossary("p-value", show = "def")`
+
+## Glossary Table
+
+Show the table of terms defined on this page (or since the last reset) with `glossary_table()`:
+
+```{r, echo = FALSE}
+glossary_table()
+```
+
+You can reset the glossary table between sections with `glossary_reset()`.
+
+
+

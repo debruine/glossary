@@ -9,7 +9,7 @@ glossary(
   display = term,
   def = NULL,
   add_to_table = TRUE,
-  show_def = FALSE,
+  show = c("term", "def"),
   path = glossary_path()
 )
 }
@@ -22,7 +22,7 @@ glossary(
 
 \item{add_to_table}{whether to add to the table created by glossary_table()}
 
-\item{show_def}{whether to show the definition or just the term}
+\item{show}{whether to show term with definition on hover (default), or just the term or just the definition}
 
 \item{path}{the path to the glossary file}
 }
@@ -36,5 +36,6 @@ Display glossary entry
 glossary("alpha")
 glossary("alpha", "$\\\\alpha$")
 glossary("alpha", def = "The first letter of the Greek alphabet")
-glossary("alpha", show_def = TRUE)
+glossary("alpha", show = "term")
+glossary("alpha", show = "def")
 }

@@ -1,0 +1,10 @@
+pre { white-space: pre-wrap; }
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap');
+
+a.glossary {
+  color: green;
+  text-decoration: purple underline;
+  font-family: "Fira Code", monospace;
+  cursor: help;
+}

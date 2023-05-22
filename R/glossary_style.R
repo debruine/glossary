@@ -14,6 +14,7 @@ glossary_style <- function(color = "purple", text_decoration = "none") {
     "a.glossary {\n",
     "  color: ", color, ";\n",
     "  text-decoration: ", text_decoration, ";\n",
+    "  cursor: help;\n",
     "}\n",
     "</style>\n\n"
   )

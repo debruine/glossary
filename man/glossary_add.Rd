@@ -18,3 +18,12 @@ glossary_add(term, definition, path = glossary_path(), replace = FALSE)
 \description{
 Add a definition to the glossary file
 }
+\examples{
+\dontrun{
+# make a new glossary file
+glossary_path("glossary.yml")
+
+glossary_add("joins", "Ways to combine data from two tables")
+
+}
+}

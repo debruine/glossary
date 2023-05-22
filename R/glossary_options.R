@@ -6,20 +6,9 @@
 #'
 #' @return a list of options, values of an option, or nothing
 #' @export
+#' @keywords internal
 #'
-#' @examples
-#'
-#' glossary_options() # see all options
-#'
-#' glossary_options("path") # see value of glossary.path
-#'
-#' \dontrun{
-#' # changes default path
-#' glossary_options(path = "gloss.yml")
-#'
-#' # changes back to default
-#' glossary_options(path = "include/glossary.yml")
-#' }
+
 glossary_options <- function (...) {
   # code from afex::afex_options
   dots <- list(...)
@@ -52,14 +41,15 @@ glossary_options <- function (...) {
 
 #' Reset glossary table
 #'
-#' Resets the list .myglossary in the parent environment that collects glossary entries for the table
+#' Resets the list that collects glossary entries for the table
 #'
 #' @return NULL
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' glossary_reset()
-#'
+#' }
 glossary_reset <- function() {
   glossary_options(table = list())
 }
