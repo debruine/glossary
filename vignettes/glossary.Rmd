@@ -32,11 +32,22 @@ glossary_path("glossary.yml")
 You can store definitions in a YAML file like this:
 
 ```
-alpha: |
-  The threshold chosen in Neyman-Pearson hypothesis testing to distinguish test results that lead to the decision to reject the null hypothesis, or not, based on the desired upper bound of the Type 1 error rate. An alpha level of 5% it most commonly used, but other alpha levels can be used as long as they are determined and preregistered by the researcher before the data is analyzed.
-p-value: |
+SESOI: |-
+  Smallest Effect Size of Interest: the smallest effect that is theoretically or practically meaningful
+
+  See [Equivalence Testing for Psychological Research](https://doi.org/10.1177/2515245918770963) for a tutorial on methods for choosing an SESOI.
+p-value: |-
   The probability of the observed data, or more extreme data, if the null hypothesis is true. The lower the p-value, the higher the test statistic, and less likely it is to observe the data if the null hypothesis is true.
 ```
+
+Alternatively, you can add definitions to the file with code.
+
+```{r, eval = FALSE}
+glossary_add(term = "power",
+             def = "The probability of rejecting the null hypothesis when it is false, for a specific analysis, effect size, sample size, and criteria for significance."
+")
+```
+
 
 ## Style
 
@@ -50,12 +61,9 @@ Alternatively, you can add your own CSS to your document to create a more custom
 
 ```{css}
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap');
-
 a.glossary {
   color: green;
   text-decoration: purple underline;
-  font-family: "Fira Code", monospace;
   cursor: help;
 }
 </style>

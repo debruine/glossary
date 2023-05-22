@@ -4,12 +4,12 @@
 \alias{glossary_add}
 \title{Add a definition to the glossary file}
 \usage{
-glossary_add(term, definition, path = glossary_path(), replace = FALSE)
+glossary_add(term, def, path = glossary_path(), replace = FALSE)
 }
 \arguments{
 \item{term}{The term to define}
 
-\item{definition}{The definition to add}
+\item{def}{The definition to add}
 
 \item{path}{The path of the glossary file}
 
