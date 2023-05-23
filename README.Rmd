@@ -35,7 +35,7 @@ devtools::install_github("debruine/glossary")
 Hover over the terms to see a popup definition.
 
 ```{r, results='asis'}
-library(glossary)
+library(glossary) 
 glossary_path("inst/glossary.yml")
 glossary_style("purple", "underline")
 ```

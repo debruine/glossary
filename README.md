@@ -28,7 +28,7 @@ devtools::install_github("debruine/glossary")
 Hover over the terms to see a popup definition.
 
 ``` r
-library(glossary)
+library(glossary) 
 glossary_path("inst/glossary.yml")
 glossary_style("purple", "underline")
 ```
@@ -48,7 +48,7 @@ you need to know the intended sample size, expected
 size</a> (e.g.,
 <a class='glossary' title='Smallest Effect Size of Interest: the smallest effect that is theoretically or practically meaningful  See Equivalence Testing for Psychological Research for a tutorial on methods for choosing an SESOI.'>SESOI</a>),
 and
-<a class='glossary' title='The threshold chosen in Neyman-Pearson hypothesis testing to distinguish test results that lead to the decision to reject the null hypothesis, or not, based on the desired upper bound of the Type 1 error rate. An alpha level of 5% it most commonly used, but other alpha levels can be used as long as they are determined and preregistered by the researcher before the data is analyzed.'>alpha</a>
+<a class='glossary' title='The threshold chosen in Neyman-Pearson hypothesis testing to distinguish test results that lead to the decision to reject the null hypothesis, or not, based on the desired upper bound of the Type 1 error rate. An alpha level of 5% is most commonly used, but other alpha levels can be used as long as they are determined and preregistered by the researcher before the data is analyzed.'>alpha</a>
 criterion.
 
 <table class="table" style="margin-left: auto; margin-right: auto;">
@@ -71,7 +71,7 @@ alpha
 The threshold chosen in Neyman-Pearson hypothesis testing to distinguish
 test results that lead to the decision to reject the null hypothesis, or
 not, based on the desired upper bound of the Type 1 error rate. An alpha
-level of 5% it most commonly used, but other alpha levels can be used as
+level of 5% is most commonly used, but other alpha levels can be used as
 long as they are determined and preregistered by the researcher before
 the data is analyzed.
 </td>
