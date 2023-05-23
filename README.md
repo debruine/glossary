@@ -25,7 +25,7 @@ devtools::install_github("debruine/glossary")
 
 ## Example
 
-Hover over the terms to see a popup definition.
+Click on the terms to see a popup definition.
 
 ``` r
 library(glossary) 
@@ -38,18 +38,57 @@ a.glossary {
   color: purple;
   text-decoration: underline;
   cursor: help;
+  position: relative;
+}
+/* popup-definition */
+a.glossary .def {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  width: 200px;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -100px;
+  background-color: #333;
+  color: white;
+  padding: 5px;
+  border-radius: 6px;
+}
+/* show on click */
+a.glossary:active .def {
+  display: inline-block;
+}
+/* triangle arrow */
+a.glossary:active .def::after {
+  content: ' ';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
 }
 </style>
 
-To calculate
-<a class='glossary' title='The probability of rejecting the null hypothesis when it is false, for a specific analysis, effect size, sample size, and criteria for significance.'>power</a>,
-you need to know the intended sample size, expected
-<a class='glossary' title='&#39;quantitative reflection of the magnitude of some phenomenon that is used for the purpose of addressing a question of interest&#39; (Kelley &amp; Preacher, 2012)'>effect
-size</a> (e.g.,
-<a class='glossary' title='Smallest Effect Size of Interest: the smallest effect that is theoretically or practically meaningful  See Equivalence Testing for Psychological Research for a tutorial on methods for choosing an SESOI.'>SESOI</a>),
-and
-<a class='glossary' title='The threshold chosen in Neyman-Pearson hypothesis testing to distinguish test results that lead to the decision to reject the null hypothesis, or not, based on the desired upper bound of the Type 1 error rate. An alpha level of 5% is most commonly used, but other alpha levels can be used as long as they are determined and preregistered by the researcher before the data is analyzed.'>alpha</a>
-criterion.
+To calculate <a class='glossary'>power<span class="def">The probability
+of rejecting the null hypothesis when it is false, for a specific
+analysis, effect size, sample size, and criteria for
+significance.</span></a>, you need to know the intended sample size,
+expected <a class='glossary'>effect size<span class="def">‘quantitative
+reflection of the magnitude of some phenomenon that is used for the
+purpose of addressing a question of interest’ (Kelley & Preacher,
+2012)</span></a> (e.g., <a class='glossary'>SESOI<span
+class="def">Smallest Effect Size of Interest: the smallest effect that
+is theoretically or practically meaningful \| See Equivalence Testing
+for Psychological Research for a tutorial on methods for choosing an
+SESOI.</span></a>), and <a class='glossary'>alpha<span class="def">The
+threshold chosen in Neyman-Pearson hypothesis testing to distinguish
+test results that lead to the decision to reject the null hypothesis, or
+not, based on the desired upper bound of the Type 1 error rate. An alpha
+level of 5% is most commonly used, but other alpha levels can be used as
+long as they are determined and preregistered by the researcher before
+the data is analyzed.</span></a> criterion.
 
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <thead>

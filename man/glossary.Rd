@@ -10,6 +10,7 @@ glossary(
   def = NULL,
   add_to_table = TRUE,
   show = c("term", "def"),
+  popup = glossary_popup(),
   path = glossary_path()
 )
 }
@@ -22,7 +23,9 @@ glossary(
 
 \item{add_to_table}{whether to add to the table created by glossary_table()}
 
-\item{show}{whether to show term with definition on hover (default), or just the term or just the definition}
+\item{show}{whether to show the term or just the definition}
+
+\item{popup}{whether to show the popup on "click" or "hover" (or "none")}
 
 \item{path}{the path to the glossary file}
 }

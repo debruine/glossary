@@ -32,7 +32,7 @@ devtools::install_github("debruine/glossary")
 
 ## Example
 
-Hover over the terms to see a popup definition.
+Click on the terms to see a popup definition.
 
 ```{r, results='asis'}
 library(glossary) 

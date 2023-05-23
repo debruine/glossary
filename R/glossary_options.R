@@ -71,11 +71,32 @@ glossary_path <- function(path = NULL) {
   }
 
   # create file if necessary
-  if (!file.exists(path)) {
+  if (path != "psyteachr" & !file.exists(path)) {
     write("term: |\n  definition\n", path)
     message(path, " does not exist; it has been created")
   }
 
   # set path
   glossary_options(path = path)
+}
+
+
+#' Set or get the default popup type
+#'
+#' @param popup If Null, get the current default popup type, or set to one of "click", "hover", or "none"
+#'
+#' @return string if popup is NULL
+#' @export
+#'
+#' @examples
+#' glossary_popup() # get current popup style
+glossary_popup <- function(popup = NULL) {
+  # get popup
+  if (is.null(popup)) {
+    return(glossary_options("popup"))
+  }
+
+  # set popup
+  popup <- match.arg(popup, c("click", "hover", "none"))
+  glossary_options(popup = popup)
 }

@@ -18,6 +18,8 @@ Imports:
     kableExtra,
     knitr,
     markdown,
+    rvest,
+    xml2,
     yaml
 Suggests: 
     rmarkdown,

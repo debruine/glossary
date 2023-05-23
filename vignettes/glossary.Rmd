@@ -29,6 +29,8 @@ Set the default path to the definition file.
 glossary_path("glossary.yml")
 ```
 
+### Definition YAML File
+
 You can store definitions in a YAML file. Use markdown to create paragraphs, links, and lists. Make sure each new line in a definition is indented two spaces (sorry YAML is a bit picky, but it's the best human-editable solution).
 
 ```
@@ -40,6 +42,8 @@ p-value: |
   The probability of the observed data, or more extreme data, if the null hypothesis is true. The lower the p-value, the higher the test statistic, and less likely it is to observe the data if the null hypothesis is true.
 ```
 
+### Add Definitions with Code
+
 Alternatively, you can add definitions to the file with code. You don't need to indent new lines if you add definitions this way.
 
 ```{r, eval = FALSE}
@@ -48,30 +52,70 @@ glossary_add(term = "power",
 ")
 ```
 
+### PsyTeachR Glossary
+
+If you want to use the [PsyTeachR Glossary](https://psyteachr.github.io/glossary/), set the path to "psyteachr". This will produce links to the online glossary when you click on the term, so it's best to use with the "hover" popup type (see below).
+
+```{r}
+glossary_path("psyteachr")
+glossary_popup("hover")
+```
+
+`r glossary("absolute path")`
+
+
+```{r, echo = FALSE}
+# reset for rest of page
+glossary_path("glossary.yml")
+```
+
+
+## Popup Type
+
+Set the popup type with `glossary_popup()`; options are "click" (default), "hover", and "none".
+
+```{r}
+glossary_popup("none")
+```
+
+`r glossary("alpha")`
+
+```{r}
+glossary_popup("hover")
+```
+
+`r glossary("alpha")`
+
+```{r}
+glossary_popup("click")
+```
+
+`r glossary("alpha")`
 
 ## Style
 
-By default, the in-text glossary terms will be styled like other links in your document. You can set a different style at the top of your document (set the code chunk to `results='asis'`).
+If your popup type is "click", you must add a style with the `glossary_style()` function for the popups to work. If you set the popup type to "hover", or "none", you can omit this and the in-text glossary terms will be styled like other links in your document.
+
+Set the style at the top of your document (set the code chunk to `results='asis'`). The code below shows the default options.
 
 ```{r, results='asis'}
-glossary_style(color = "green", text_decoration = "purple underline")
+glossary_style(color = "purple", 
+               text_decoration = "underline",
+               def_bg = "#333",
+               def_color = "white")
 ```
 
-Alternatively, you can add your own CSS to your document to create a more customised appearance.
+Alternatively, you can add your own CSS to your document (inline or in an external linked file) to create a more customised appearance. Just copy the text returned by the `glossary_style()` function and customise it.
 
-```{css}
-<style>
-a.glossary {
-  color: green;
-  text-decoration: purple underline;
-  cursor: help;
-}
-</style>
+```{r, eval = FALSE}
+# append default styles to an external CSS file
+write(glossary_style(), "glossary.css", append = TRUE)
 ```
+
 
 ## In-Text Terms
 
-Hover over the highlighted terms to see the definition.
+There are a few ways to customise the glossary term display.
 
 * Look up a term from the glossary file with `glossary("alpha")`: `r glossary("alpha")`
 

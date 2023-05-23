@@ -4,18 +4,27 @@
 \alias{glossary_style}
 \title{Create CSS styles for glossary entries}
 \usage{
-glossary_style(color = "purple", text_decoration = "none")
+glossary_style(
+  color = "purple",
+  text_decoration = "none",
+  def_bg = "#333",
+  def_color = "white"
+)
 }
 \arguments{
-\item{color}{A valid CSS colour string, such as "purple" or "#FF0000"}
+\item{color}{Text colour of the linked term}
 
-\item{text_decoration}{A valid CSS text-decoration string, such as "underline" or "red wavy underline"}
+\item{text_decoration}{Style of the linked term; a valid CSS text-decoration string, such as "underline" or "red wavy underline"}
+
+\item{def_bg}{Background colour of the definition pop-up}
+
+\item{def_color}{Text colour of the definition pop-up}
 }
 \value{
 A CSS style string
 }
 \description{
-Create CSS styles for glossary entries
+Set the colour and style of the linked in-text terms and pop-up defintions. Colours should be a valid CSS colour string, such as "purple" or "#FF0000".
 }
 \examples{
 glossary_style("#003366", "underline")
