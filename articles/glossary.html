@@ -94,6 +94,9 @@
 <p>Set the default path to the definition file.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/glossary_path.html">glossary_path</a></span><span class="op">(</span><span class="st">"glossary.yml"</span><span class="op">)</span></span></code></pre></div>
+<div class="section level3">
+<h3 id="definition-yaml-file">Definition YAML File<a class="anchor" aria-label="anchor" href="#definition-yaml-file"></a>
+</h3>
 <p>You can store definitions in a YAML file. Use markdown to create
 paragraphs, links, and lists. Make sure each new line in a definition is
 indented two spaces (sorry YAML is a bit picky, but it’s the best
@@ -104,62 +107,144 @@ human-editable solution).</p>
   See [Equivalence Testing for Psychological Research](https://doi.org/10.1177/2515245918770963) for a tutorial on methods for choosing an SESOI.
 p-value: |
   The probability of the observed data, or more extreme data, if the null hypothesis is true. The lower the p-value, the higher the test statistic, and less likely it is to observe the data if the null hypothesis is true.</code></pre>
+</div>
+<div class="section level3">
+<h3 id="add-definitions-with-code">Add Definitions with Code<a class="anchor" aria-label="anchor" href="#add-definitions-with-code"></a>
+</h3>
 <p>Alternatively, you can add definitions to the file with code. You
 don’t need to indent new lines if you add definitions this way.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glossary_add</span>(<span class="at">term =</span> <span class="st">"power"</span>,</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">def =</span> <span class="st">"The probability of rejecting the null hypothesis when it is false, for a specific analysis, effect size, sample size, and criteria for significance."</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="st">")</span></span></code></pre></div>
 </div>
+<div class="section level3">
+<h3 id="psyteachr-glossary">PsyTeachR Glossary<a class="anchor" aria-label="anchor" href="#psyteachr-glossary"></a>
+</h3>
+<p>If you want to use the <a href="https://psyteachr.github.io/glossary/" class="external-link">PsyTeachR Glossary</a>, set
+the path to “psyteachr”. This will produce links to the online glossary
+when you click on the term, so it’s best to use with the “hover” popup
+type (see below).</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/glossary_path.html">glossary_path</a></span><span class="op">(</span><span class="st">"psyteachr"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/glossary_popup.html">glossary_popup</a></span><span class="op">(</span><span class="st">"hover"</span><span class="op">)</span></span></code></pre></div>
+<p><a href="https://psyteachr.github.io/glossary/a/#absolute-path" target="_blank" class="external-link glossary" title="A file path that starts with / and is not appended to the working directory">absolute
+path</a></p>
+</div>
+</div>
+<div class="section level2">
+<h2 id="popup-type">Popup Type<a class="anchor" aria-label="anchor" href="#popup-type"></a>
+</h2>
+<p>Set the popup type with <code><a href="../reference/glossary_popup.html">glossary_popup()</a></code>; options are
+“click” (default), “hover”, and “none”.</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/glossary_popup.html">glossary_popup</a></span><span class="op">(</span><span class="st">"none"</span><span class="op">)</span></span></code></pre></div>
+<p><a class="glossary">alpha</a></p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/glossary_popup.html">glossary_popup</a></span><span class="op">(</span><span class="st">"hover"</span><span class="op">)</span></span></code></pre></div>
+<p><a class="glossary" title="The threshold chosen in Neyman-Pearson hypothesis testing to distinguish test results that lead to the decision to reject the null hypothesis, or not, based on the desired upper bound of the Type 1 error rate. An alpha level of 5% is most commonly used, but other alpha levels can be used as long as they are determined and preregistered by the researcher before the data is analyzed.">alpha</a></p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/glossary_popup.html">glossary_popup</a></span><span class="op">(</span><span class="st">"click"</span><span class="op">)</span></span></code></pre></div>
+<p><a class="glossary">alpha<span class="def">The threshold chosen in
+Neyman-Pearson hypothesis testing to distinguish test results that lead
+to the decision to reject the null hypothesis, or not, based on the
+desired upper bound of the Type 1 error rate. An alpha level of 5% is
+most commonly used, but other alpha levels can be used as long as they
+are determined and preregistered by the researcher before the data is
+analyzed.</span></a></p>
+</div>
 <div class="section level2">
 <h2 id="style">Style<a class="anchor" aria-label="anchor" href="#style"></a>
 </h2>
-<p>By default, the in-text glossary terms will be styled like other
-links in your document. You can set a different style at the top of your
-document (set the code chunk to <code>results='asis'</code>).</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/glossary_style.html">glossary_style</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"green"</span>, text_decoration <span class="op">=</span> <span class="st">"purple underline"</span><span class="op">)</span></span></code></pre></div>
+<p>If your popup type is “click”, you must add a style with the
+<code><a href="../reference/glossary_style.html">glossary_style()</a></code> function for the popups to work. If you
+set the popup type to “hover”, or “none”, you can omit this and the
+in-text glossary terms will be styled like other links in your
+document.</p>
+<p>Set the style at the top of your document (set the code chunk to
+<code>results='asis'</code>). The code below shows the default
+options.</p>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/glossary_style.html">glossary_style</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"purple"</span>, </span>
+<span>               text_decoration <span class="op">=</span> <span class="st">"underline"</span>,</span>
+<span>               def_bg <span class="op">=</span> <span class="st">"#333"</span>,</span>
+<span>               def_color <span class="op">=</span> <span class="st">"white"</span><span class="op">)</span></span></code></pre></div>
 <style>
 a.glossary {
-  color: green;
-  text-decoration: purple underline;
+  color: purple;
+  text-decoration: underline;
   cursor: help;
+  position: relative;
+}
+
+/* only needed for popup = "click" */
+/* popup-definition */
+a.glossary .def {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  width: 200px;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -100px;
+  background-color: #333;
+  color: white;
+  padding: 5px;
+  border-radius: 6px;
+}
+/* show on click */
+a.glossary:active .def {
+  display: inline-block;
+}
+/* triangle arrow */
+a.glossary:active .def::after {
+  content: ' ';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
 }
 </style>
-<p>Alternatively, you can add your own CSS to your document to create a
-more customised appearance.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>&lt;style<span class="op">&gt;</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>a<span class="fu">.glossary</span> {</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span>: <span class="cn">green</span><span class="op">;</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">text-decoration</span>: <span class="cn">purple</span> <span class="dv">underline</span><span class="op">;</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">cursor</span>: <span class="dv">help</span><span class="op">;</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>&lt;/style<span class="op">&gt;</span></span></code></pre></div>
-<style type="text/css">
-<style>
-a.glossary {
-  color: green;
-  text-decoration: purple underline;
-  cursor: help;
-}
-</style>
+<p>Alternatively, you can add your own CSS to your document (inline or
+in an external linked file) to create a more customised appearance. Just
+copy the text returned by the <code><a href="../reference/glossary_style.html">glossary_style()</a></code> function and
+customise it.</p>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># append default styles to an external CSS file</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/write.html" class="external-link">write</a></span><span class="op">(</span><span class="fu"><a href="../reference/glossary_style.html">glossary_style</a></span><span class="op">(</span><span class="op">)</span>, <span class="st">"glossary.css"</span>, append <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="in-text-terms">In-Text Terms<a class="anchor" aria-label="anchor" href="#in-text-terms"></a>
 </h2>
-<p>Hover over the highlighted terms to see the definition.</p>
+<p>There are a few ways to customise the glossary term display.</p>
 <ul>
 <li><p>Look up a term from the glossary file with
-<code>glossary("alpha")</code>:
-<a class="glossary" title="The threshold chosen in Neyman-Pearson hypothesis testing to distinguish test results that lead to the decision to reject the null hypothesis, or not, based on the desired upper bound of the Type 1 error rate. An alpha level of 5% is most commonly used, but other alpha levels can be used as long as they are determined and preregistered by the researcher before the data is analyzed.">alpha</a></p></li>
+<code>glossary("alpha")</code>: <a class="glossary">alpha<span class="def">The threshold chosen in Neyman-Pearson hypothesis testing to
+distinguish test results that lead to the decision to reject the null
+hypothesis, or not, based on the desired upper bound of the Type 1 error
+rate. An alpha level of 5% is most commonly used, but other alpha levels
+can be used as long as they are determined and preregistered by the
+researcher before the data is analyzed.</span></a></p></li>
 <li><p>Display a different value for the term with
-<code>glossary("alpha", "$\\alpha$")</code>:
-<a class="glossary" title="The threshold chosen in Neyman-Pearson hypothesis testing to distinguish test results that lead to the decision to reject the null hypothesis, or not, based on the desired upper bound of the Type 1 error rate. An alpha level of 5% is most commonly used, but other alpha levels can be used as long as they are determined and preregistered by the researcher before the data is analyzed."><span class="math inline">\(\alpha\)</span></a></p></li>
+<code>glossary("alpha", "$\\alpha$")</code>: <a class="glossary"><span class="math inline">\(\alpha\)</span><span class="def">The threshold
+chosen in Neyman-Pearson hypothesis testing to distinguish test results
+that lead to the decision to reject the null hypothesis, or not, based
+on the desired upper bound of the Type 1 error rate. An alpha level of
+5% is most commonly used, but other alpha levels can be used as long as
+they are determined and preregistered by the researcher before the data
+is analyzed.</span></a></p></li>
 <li><p>Use an inline definition instead of the glossary file with
 <code>glossary("beta", def = "The second letter of the Greek alphabet")</code>:
-<a class="glossary" title="The second letter of the Greek alphabet">beta</a></p></li>
+<a class="glossary">beta<span class="def">The second letter of the Greek
+alphabet</span></a></p></li>
 <li><p>Just show the term (no hover) with
 <code>glossary("effect size", show = "term")</code>:
-<a class="glossary">effect size</a></p></li>
+<a class="glossary">effect size<span class="def">‘quantitative
+reflection of the magnitude of some phenomenon that is used for the
+purpose of addressing a question of interest’ (Kelley &amp; Preacher,
+2012)</span></a></p></li>
 <li><p>Just show the definition with
 <code>glossary("p-value", show = "def")</code>: The probability of the
 observed data, or more extreme data, if the null hypothesis is true. The
@@ -182,6 +267,15 @@ definition
 </th>
 </tr></thead>
 <tbody>
+<tr>
+<td style="text-align:left;">
+absolute path
+</td>
+<td style="text-align:left;">
+A file path that starts with / and is not appended to the working
+directory
+</td>
+</tr>
 <tr>
 <td style="text-align:left;">
 alpha

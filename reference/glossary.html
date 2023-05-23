@@ -57,6 +57,7 @@
 <span>  def <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  add_to_table <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  show <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"term"</span>, <span class="st">"def"</span><span class="op">)</span>,</span>
+<span>  popup <span class="op">=</span> <span class="fu"><a href="glossary_popup.html">glossary_popup</a></span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  path <span class="op">=</span> <span class="fu"><a href="glossary_path.html">glossary_path</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
@@ -80,7 +81,11 @@
 
 
 <dt>show</dt>
-<dd><p>whether to show term with definition on hover (default), or just the term or just the definition</p></dd>
+<dd><p>whether to show the term or just the definition</p></dd>
+
+
+<dt>popup</dt>
+<dd><p>whether to show the popup on "click" or "hover" (or "none")</p></dd>
 
 
 <dt>path</dt>
@@ -98,15 +103,15 @@
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">glossary</span><span class="op">(</span><span class="st">"alpha"</span><span class="op">)</span></span></span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>The definition for "alpha" was not found in </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "&lt;a class='glossary' title=''&gt;alpha&lt;/a&gt;"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "&lt;a class='glossary'&gt;alpha&lt;span class='def'&gt;&lt;/span&gt;&lt;/a&gt;"</span>
 <span class="r-in"><span><span class="fu">glossary</span><span class="op">(</span><span class="st">"alpha"</span>, <span class="st">"$\\alpha$"</span><span class="op">)</span></span></span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>The definition for "alpha" was not found in </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "&lt;a class='glossary' title=''&gt;$\\alpha$&lt;/a&gt;"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "&lt;a class='glossary'&gt;$\\alpha$&lt;span class='def'&gt;&lt;/span&gt;&lt;/a&gt;"</span>
 <span class="r-in"><span><span class="fu">glossary</span><span class="op">(</span><span class="st">"alpha"</span>, def <span class="op">=</span> <span class="st">"The first letter of the Greek alphabet"</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "&lt;a class='glossary' title='The first letter of the Greek alphabet'&gt;alpha&lt;/a&gt;"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "&lt;a class='glossary'&gt;alpha&lt;span class='def'&gt;The first letter of the Greek alphabet&lt;/span&gt;&lt;/a&gt;"</span>
 <span class="r-in"><span><span class="fu">glossary</span><span class="op">(</span><span class="st">"alpha"</span>, show <span class="op">=</span> <span class="st">"term"</span><span class="op">)</span></span></span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>The definition for "alpha" was not found in </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "&lt;a class='glossary'&gt;alpha&lt;/a&gt;"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "&lt;a class='glossary'&gt;alpha&lt;span class='def'&gt;&lt;/span&gt;&lt;/a&gt;"</span>
 <span class="r-in"><span><span class="fu">glossary</span><span class="op">(</span><span class="st">"alpha"</span>, show <span class="op">=</span> <span class="st">"def"</span><span class="op">)</span></span></span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>The definition for "alpha" was not found in </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] ""</span>
