@@ -18,7 +18,7 @@ terms at the end of a section.
 
 ## Installation
 
-You can install the development version of glossary from CRANwith:
+You can (hopefully soon) install glossary from CRAN with:
 
 ``` r
 install.packages("glossary")
