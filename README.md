@@ -4,6 +4,9 @@
 # glossary <a href="https://debruine.github.io/glossary/"><img src="man/figures/logo.png" align="right" height="120" /></a>
 
 <!-- badges: start -->
+
+[![Codecov test
+coverage](https://codecov.io/gh/debruine/glossary/branch/master/graph/badge.svg)](https://app.codecov.io/gh/debruine/glossary?branch=master)
 <!-- badges: end -->
 
 There is a lot of necessary jargon to learn for coding. The goal of

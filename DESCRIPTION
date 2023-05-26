@@ -23,6 +23,7 @@ Imports:
     xml2,
     yaml
 Suggests: 
+    covr,
     rmarkdown,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
