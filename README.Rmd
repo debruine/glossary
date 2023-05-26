@@ -23,6 +23,12 @@ There is a lot of necessary jargon to learn for coding. The goal of glossary is 
 
 ## Installation
 
+You can install the development version of glossary from CRANwith:
+
+``` r
+install.packages("glossary")
+```
+
 You can install the development version of glossary from [GitHub](https://github.com/) with:
 
 ``` r

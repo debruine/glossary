@@ -3,7 +3,7 @@
 #' Set the colour and style of the linked in-text terms and pop-up defintions. Colours should be a valid CSS colour string, such as "purple" or "#FF0000".
 #'
 #' @param color Text colour of the linked term
-#' @param text_decoration Style of the linked term; a valid CSS text-decoration string, such as "underline" or "red wavy underline"
+#' @param text_decoration Style of the linked term; a valid CSS text-decoration string, such as "none", underline" or "red wavy underline"
 #' @param def_bg Background colour of the definition pop-up
 #' @param def_color Text colour of the definition pop-up
 #'
@@ -13,7 +13,7 @@
 #' @examples
 #' glossary_style("#003366", "underline")
 glossary_style <- function(color = "purple",
-                           text_decoration = "none",
+                           text_decoration = "underline",
                            def_bg = "#333",
                            def_color = "white") {
   style <- paste0(

@@ -6,7 +6,7 @@
 \usage{
 glossary_style(
   color = "purple",
-  text_decoration = "none",
+  text_decoration = "underline",
   def_bg = "#333",
   def_color = "white"
 )
@@ -14,7 +14,7 @@ glossary_style(
 \arguments{
 \item{color}{Text colour of the linked term}
 
-\item{text_decoration}{Style of the linked term; a valid CSS text-decoration string, such as "underline" or "red wavy underline"}
+\item{text_decoration}{Style of the linked term; a valid CSS text-decoration string, such as "none", underline" or "red wavy underline"}
 
 \item{def_bg}{Background colour of the definition pop-up}
 

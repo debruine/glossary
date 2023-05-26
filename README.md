@@ -15,6 +15,12 @@ terms at the end of a section.
 
 ## Installation
 
+You can install the development version of glossary from CRANwith:
+
+``` r
+install.packages("glossary")
+```
+
 You can install the development version of glossary from
 [GitHub](https://github.com/) with:
 
@@ -40,6 +46,8 @@ a.glossary {
   cursor: help;
   position: relative;
 }
+
+/* only needed for popup = "click" */
 /* popup-definition */
 a.glossary .def {
   display: none;
@@ -75,9 +83,9 @@ To calculate <a class='glossary'>power<span class="def">The probability
 of rejecting the null hypothesis when it is false, for a specific
 analysis, effect size, sample size, and criteria for
 significance.</span></a>, you need to know the intended sample size,
-expected <a class='glossary'>effect size<span class="def">‘quantitative
+expected <a class='glossary'>effect size<span class="def">'quantitative
 reflection of the magnitude of some phenomenon that is used for the
-purpose of addressing a question of interest’ (Kelley & Preacher,
+purpose of addressing a question of interest' (Kelley & Preacher,
 2012)</span></a> (e.g., <a class='glossary'>SESOI<span
 class="def">Smallest Effect Size of Interest: the smallest effect that
 is theoretically or practically meaningful \| See Equivalence Testing

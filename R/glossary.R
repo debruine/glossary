@@ -36,7 +36,7 @@ glossary <- function(term,
       lcterm <- gsub(" ", "-", tolower(term), fixed = TRUE)
       first_letter <- substr(lcterm, 1, 1)
       url <- paste0("https://psyteachr.github.io/glossary/", first_letter)
-      href <- paste0(" href='", url, "/#", lcterm, "' target='_blank'")
+      href <- paste0(" href='", url, "#", lcterm, "' target='_blank'")
 
       hash <- paste0("#", lcterm, ".level2")
       def <- tryCatch({
@@ -97,10 +97,9 @@ glossary <- function(term,
       options = c("smartypants",
                   "fragment_only")
     )
-    cleandef <- gsub("<li>", "* ", cleandef, fixed = TRUE)
-    cleandef <- gsub("</li>", "; ", cleandef, fixed = TRUE)
+    cleandef <- gsub("</li>\\s*<li>", "; ", cleandef)
     cleandef <- gsub("<.*?>", "", cleandef)
-    cleandef <- gsub("\n", " | ", trimws(cleandef))
+    cleandef <- gsub("(\n\r?)+", " | ", trimws(cleandef))
 
     if (popup == "hover") {
       text <- paste0("<a", href, " class='glossary' title='", cleandef, "'>",

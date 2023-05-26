@@ -2,7 +2,7 @@ test_that("x", {
   glossary_popup("hover")
   gloss <- tempfile(fileext = ".yml")
   on.exit(unlink(gloss))
-  expect_message(glossary_path(gloss))
+  expect_message(glossary_path(gloss, TRUE))
 
   expect_warning(test <- glossary("new"))
   exp <- "<a class='glossary' title=''>new</a>"
@@ -32,6 +32,6 @@ And another paragraph before a list:
   glossary_add("html", definition)
 
   test <- glossary("html")
-  exp <- "<a class='glossary' title='This is a paragraph with a link. | And another paragraph before a list: |  | * Item 1;  | * Item 2;'>html</a>"
+  exp <- "<a class='glossary' title='This is a paragraph with a link. | And another paragraph before a list: | Item 1; Item 2'>html</a>"
   expect_equal(test, exp)
 })

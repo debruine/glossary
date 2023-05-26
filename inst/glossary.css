@@ -4,6 +4,8 @@ a.glossary {
   cursor: help;
   position: relative;
 }
+
+/* only needed for popup = "click" */
 /* popup-definition */
 a.glossary .def {
   display: none;
@@ -24,7 +26,7 @@ a.glossary:active .def {
 }
 /* triangle arrow */
 a.glossary:active .def::after {
-  content: " ";
+  content: ' ';
   position: absolute;
   top: 100%;
   left: 50%;

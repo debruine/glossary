@@ -156,7 +156,9 @@ test_that("tricky entries", {
 
   # entry with single quotes
   test <- glossary("effect size")
-  exp <- "<a class='glossary' title='‘quantitative reflection of the magnitude of some phenomenon that is used for the purpose of addressing a question of interest’ (Kelley &amp; Preacher, 2012)'>effect size</a>"
+  test <- gsub("‘", "&#39;", test) # differs between runs ?
+  test <- gsub("’", "&#39;", test)
+  exp <- "<a class='glossary' title='&#39;quantitative reflection of the magnitude of some phenomenon that is used for the purpose of addressing a question of interest&#39; (Kelley &amp; Preacher, 2012)'>effect size</a>"
   expect_equal(test, exp)
 })
 
@@ -167,6 +169,6 @@ test_that("psyteachr", {
 
   skip_if_offline(host = "psyteachr.github.io")
   test <- glossary("alpha")
-  exp <- "<a href='https://psyteachr.github.io/glossary/a/#alpha' target='_blank' class='glossary'>alpha<span class='def'>(stats) The cutoff value for making a decision to reject the null hypothesis; (graphics) A value between 0 and 1 used to control the levels of transparency in a plot</span></a>"
+  exp <- "<a href='https://psyteachr.github.io/glossary/a#alpha' target='_blank' class='glossary'>alpha<span class='def'>(stats) The cutoff value for making a decision to reject the null hypothesis; (graphics) A value between 0 and 1 used to control the levels of transparency in a plot</span></a>"
   expect_equal(test, exp)
 })

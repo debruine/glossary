@@ -4,7 +4,7 @@
 \alias{glossary_popup}
 \title{Set or get the default popup type}
 \usage{
-glossary_popup(popup = NULL)
+glossary_popup(popup)
 }
 \arguments{
 \item{popup}{If Null, get the current default popup type, or set to one of "click", "hover", or "none"}

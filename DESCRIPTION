@@ -1,16 +1,16 @@
 Package: glossary
-Title: Add glossaries to markdown and quarto documents
-Date: 2023-05-23
-Version: 0.0.0.9001
+Title: Glossaries for Markdown and Quarto Documents
+Date: 2023-05-25
+Version: 0.0.0.9002
 Authors@R: c(
     person(
         given = "Lisa", 
         family = "DeBruine", 
-        role = c("aut", "cre"), 
+        role = c("aut", "cre", "cph"), 
         email = "debruine@gmail.com", 
         comment = c(ORCID = "0000-0002-7523-5539")
     ))
-Description: Add glossaries to markdown and quarto documents by tagging individual words. Definitions can be provided inline or in a separate YAML file.
+Description: Add glossaries to markdown and quarto documents by tagging individual words. Definitions can be provided inline or in a separate file.
 License: CC BY 4.0
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
