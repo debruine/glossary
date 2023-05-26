@@ -1,3 +1,5 @@
+# glossary 1.0.0
+
 # glossary 0.0.0.9002
 
 * Cleaned up popup display of definitions with lists or line breaks
