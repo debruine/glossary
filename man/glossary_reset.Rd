@@ -7,10 +7,8 @@
 glossary_reset()
 }
 \description{
-Resets the list that collects glossary entries for the table
+Resets the list that collects glossary entries for the table.
 }
 \examples{
-\dontrun{
 glossary_reset()
-}
 }

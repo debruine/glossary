@@ -13,5 +13,16 @@ glossary_table(as_kable = TRUE)
 kable table or data frame
 }
 \description{
-Display glossary table
+All terms defined with \code{\link{glossary}} (since the last call to \code{\link{glossary_reset}}) are added to a list, which this function displays using kable (or outputs as a data frame).
+}
+\examples{
+\donttest{
+glossary_reset()
+# add a definition to the table
+glossary("term", def = "definition", path = NULL)
+
+glossary_table() # show table as kable
+glossary_table(FALSE) # or as a data frame
+}
+
 }

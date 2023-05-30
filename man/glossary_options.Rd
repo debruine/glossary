@@ -13,6 +13,6 @@ glossary_options(...)
 a list of options, values of an option, or nothing
 }
 \description{
-Global glossary options are used, for example, to set the default separator for cell names.
+Global glossary options are used, for example, to set the default path for the glossary file.
 }
 \keyword{internal}

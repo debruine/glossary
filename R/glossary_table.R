@@ -1,17 +1,27 @@
 #' Display glossary table
 #'
+#' All terms defined with \code{\link{glossary}} (since the last call to \code{\link{glossary_reset}}) are added to a list, which this function displays using kable (or outputs as a data frame).
+#'
 #' @param as_kable if the output should be a kableExtra table or a data frame
 #'
 #' @return kable table or data frame
 #' @export
+#' @examples
+#' \donttest{
+#' glossary_reset()
+#' # add a definition to the table
+#' glossary("term", def = "definition", path = NULL)
+#'
+#' glossary_table() # show table as kable
+#' glossary_table(FALSE) # or as a data frame
+#' }
+#'
 glossary_table <- function(as_kable = TRUE) {
   glossary <- glossary_options("table")
   if (is.null(glossary)) glossary <- list()
 
   term <- names(glossary)
   linked_term <- term
-  pandocto <- knitr::opts_knit$get("rmarkdown.pandoc.to")
-  is_latex <- !is.null(pandocto) && pandocto == "latex"
 
   # add links if a psyteachr glossary
   if (!is.null(glossary_path()) &&
@@ -32,7 +42,7 @@ glossary_table <- function(as_kable = TRUE) {
     )
 
     k <- kableExtra::kable(the_list[order(term),],
-                           escape = is_latex,
+                           escape = is_latex(),
                            row.names = FALSE)
     kableExtra::kable_styling(k)
   } else {

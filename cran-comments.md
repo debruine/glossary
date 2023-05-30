@@ -13,3 +13,12 @@
 
 * This is a new release.
 
+## Response to Beni Altmann's comments
+
+> Please add \value to .Rd files regarding exported methods and explain the functions results in the documentation. 
+
+Done. All functions that return non-NULL values have a \value entry and documentation is more detailed.
+
+> Please replace \dontrun with \donttest...In your examples/vignettes/tests you can write to tempdir().
+
+I wanted to make sure I wasn't accidentally changing user options if they run the examples. I've changed them to use files in the tempdir and reset options to original.

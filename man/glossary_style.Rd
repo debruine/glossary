@@ -12,19 +12,19 @@ glossary_style(
 )
 }
 \arguments{
-\item{color}{Text colour of the linked term}
+\item{color}{Text color of the linked term}
 
 \item{text_decoration}{Style of the linked term; a valid CSS text-decoration string, such as "none", underline" or "red wavy underline"}
 
-\item{def_bg}{Background colour of the definition pop-up}
+\item{def_bg}{Background color of the definition pop-up}
 
-\item{def_color}{Text colour of the definition pop-up}
+\item{def_color}{Text color of the definition pop-up}
 }
 \value{
 A CSS style string
 }
 \description{
-Set the colour and style of the linked in-text terms and pop-up defintions. Colours should be a valid CSS colour string, such as "purple" or "#FF0000".
+Set the color and style of the linked in-text terms and pop-up definitions. Colors should be a valid CSS color string, such as "purple" or "#FF0000".
 }
 \examples{
 glossary_style("#003366", "underline")

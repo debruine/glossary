@@ -1,25 +1,34 @@
-#' Add a definition to the glossary file
+#' Add a definition
+#'
+#' Write a term and definition to an existing glossary file.
 #'
 #' @param term The term to define
 #' @param def The definition to add
-#' @param path The path of the glossary file
+#' @param path the path to the glossary file; set default with \code{\link{glossary_path}}
 #' @param replace Whether to replace an existing definition
 #'
 #' @return NULL
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' # make a new glossary file
-#' glossary_path("glossary.yml")
+#' path <- tempfile("glossary", fileext = ".yml")
+#' glossary_path(path, create = TRUE)
 #'
+#' # add an entry for "joins"
 #' glossary_add("joins", "Ways to combine data from two tables")
 #'
-#' }
+#' # now you can access the definition
+#' glossary("joins")
 glossary_add <- function(term,
                          def,
                          path = glossary_path(),
                          replace = FALSE) {
+  if (is.null(path)) {
+    stop("The path must be an existing YAML file")
+  } else if (!file.exists(path)) {
+    stop("The file ", path, " does not exist")
+  }
   gloss <- yaml::read_yaml(path)
   index <- grep(term, names(gloss), ignore.case = TRUE)
 

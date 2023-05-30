@@ -7,7 +7,7 @@
 glossary_path(path, create = FALSE)
 }
 \arguments{
-\item{path}{the path to the glossary file}
+\item{path}{the path to the glossary file, or NULL for local definitions}
 
 \item{create}{create a new glossary file if it doesn't exist}
 }
@@ -18,13 +18,12 @@ path string if path is NULL
 Set or get the default glossary path
 }
 \examples{
-glossary_path() # get current path
-
-\dontrun{
-# set path to glossary.yml file (assumes it exists)
-glossary("glossary.yml")
+path <- glossary_path() # get current path
 
 # create (if doesn't exist) and set path
-glossary("include/glossary.yml", create = TRUE)
-}
+newpath <- tempfile("glossary", fileext = ".yml")
+glossary_path(newpath, create = TRUE)
+
+# set path (assumes file exists)
+glossary_path(path)
 }

@@ -4,6 +4,9 @@ test_that("x", {
   on.exit(unlink(gloss))
   expect_message(glossary_path(gloss, TRUE))
 
+  expect_error( glossary_add("a", "b", path = NULL) )
+  expect_error( glossary_add("a", "b", path = "not_a_file.yml") )
+
   expect_warning(test <- glossary("new"))
   exp <- "<a class='glossary' title=''>new</a>"
   expect_equal(test, exp)

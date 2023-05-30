@@ -1,6 +1,6 @@
 Package: glossary
 Title: Glossaries for Markdown and Quarto Documents
-Date: 2023-05-25
+Date: 2023-05-30
 Version: 1.0.0
 Authors@R: c(
     person(

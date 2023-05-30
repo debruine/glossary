@@ -7,7 +7,7 @@
 glossary_popup(popup)
 }
 \arguments{
-\item{popup}{If Null, get the current default popup type, or set to one of "click", "hover", or "none"}
+\item{popup}{If NULL, get the current default popup type, or set to one of "click", "hover", or "none"}
 }
 \value{
 string if popup is NULL
@@ -16,5 +16,12 @@ string if popup is NULL
 Set or get the default popup type
 }
 \examples{
-glossary_popup() # get current popup style
+# get current popup style
+popstyle <- glossary_popup()
+
+# change popup to click style
+glossary_popup("click")
+
+# change back to original popup style
+glossary_popup(popstyle)
 }

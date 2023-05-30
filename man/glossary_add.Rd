@@ -2,7 +2,7 @@
 % Please edit documentation in R/glossary_add.R
 \name{glossary_add}
 \alias{glossary_add}
-\title{Add a definition to the glossary file}
+\title{Add a definition}
 \usage{
 glossary_add(term, def, path = glossary_path(), replace = FALSE)
 }
@@ -11,19 +11,21 @@ glossary_add(term, def, path = glossary_path(), replace = FALSE)
 
 \item{def}{The definition to add}
 
-\item{path}{The path of the glossary file}
+\item{path}{the path to the glossary file; set default with \code{\link{glossary_path}}}
 
 \item{replace}{Whether to replace an existing definition}
 }
 \description{
-Add a definition to the glossary file
+Write a term and definition to an existing glossary file.
 }
 \examples{
-\dontrun{
 # make a new glossary file
-glossary_path("glossary.yml")
+path <- tempfile("glossary", fileext = ".yml")
+glossary_path(path, create = TRUE)
 
+# add an entry for "joins"
 glossary_add("joins", "Ways to combine data from two tables")
 
-}
+# now you can access the definition
+glossary("joins")
 }

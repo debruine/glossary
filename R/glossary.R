@@ -1,17 +1,30 @@
 #' Display glossary entry
 #'
-#' @param term The glossary term to link to, can contain spaces
-#' @param display The display (if different than the term)
-#' @param def The short definition to display on hover and in the glossary table; if NULL, this will be looked up from the glossary.yml file
-#' @param add_to_table whether to add to the table created by glossary_table()
-#' @param show whether to show the term or just the definition
-#' @param popup whether to show the popup on "click" or "hover" (or "none")
-#' @param path the path to the glossary file
+#' @description
+#' Display a glossary term with an optional popup of the definition, and add the term to the table created by \code{\link{glossary_table}}. This function is mainly meant to be used via inline R in R Markdown or quarto documents, e.g.:
 #'
-#' @return string with the link and hover text
+#' `` `r glossary("Alpha")` `` does not always have to equal .05.
+#'
+#' @details
+#'
+#' If the path is set to "psyteachr", the glossary term will link to the [PsyTeachR glossary](https://psyteachr.github.io/glossary/). Set `show = "def"` to just show the definition.
+#'
+#' @param term The glossary term to link to, can contain spaces
+#' @param display The text to display (if different than the term)
+#' @param def The short definition to display on hover and in the glossary table; if NULL, this will be looked up from the file in the `path` argument
+#' @param add_to_table whether to add to the table created by \code{\link{glossary_table}}
+#' @param show whether to show the term or just the definition
+#' @param popup whether to show the popup on "click" or "hover" (or "none"); set default with \code{\link{glossary_popup}}
+#' @param path the path to the glossary file, or NULL for local definitions; set default with \code{\link{glossary_path}}
+#'
+#' @return character string
 #' @export
 #'
 #' @examples
+#' # set glossary path to example file
+#' path <- system.file("glossary.yml", package = "glossary")
+#' glossary_path(path)
+#'
 #' glossary("alpha")
 #' glossary("alpha", "$\\alpha$")
 #' glossary("alpha", def = "The first letter of the Greek alphabet")
