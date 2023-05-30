@@ -60,7 +60,7 @@
     <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
     <dl><dt>popup</dt>
-<dd><p>If Null, get the current default popup type, or set to one of "click", "hover", or "none"</p></dd>
+<dd><p>If NULL, get the current default popup type, or set to one of "click", "hover", or "none"</p></dd>
 
 </dl></div>
     <div class="section level2">
@@ -72,8 +72,14 @@
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">glossary_popup</span><span class="op">(</span><span class="op">)</span> <span class="co"># get current popup style</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "click"</span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># get current popup style</span></span></span>
+<span class="r-in"><span><span class="va">popstyle</span> <span class="op">&lt;-</span> <span class="fu">glossary_popup</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># change popup to click style</span></span></span>
+<span class="r-in"><span><span class="fu">glossary_popup</span><span class="op">(</span><span class="st">"click"</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># change back to original popup style</span></span></span>
+<span class="r-in"><span><span class="fu">glossary_popup</span><span class="op">(</span><span class="va">popstyle</span><span class="op">)</span></span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
