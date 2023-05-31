@@ -6,6 +6,9 @@
 \usage{
 glossary_reset()
 }
+\value{
+NULL; Called for side effects
+}
 \description{
 Resets the list that collects glossary entries for the table.
 }

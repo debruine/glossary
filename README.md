@@ -5,6 +5,8 @@
 
 <!-- badges: start -->
 
+[![CRAN
+status](https://www.r-pkg.org/badges/version/glossary)](https://CRAN.R-project.org/package=glossary)
 [![Codecov test
 coverage](https://codecov.io/gh/debruine/glossary/branch/master/graph/badge.svg)](https://app.codecov.io/gh/debruine/glossary?branch=master)
 <!-- badges: end -->
@@ -18,7 +20,7 @@ terms at the end of a section.
 
 ## Installation
 
-You can (hopefully soon) install glossary from CRAN with:
+You can install glossary from CRAN with:
 
 ``` r
 install.packages("glossary")

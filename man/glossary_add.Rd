@@ -15,6 +15,9 @@ glossary_add(term, def, path = glossary_path(), replace = FALSE)
 
 \item{replace}{Whether to replace an existing definition}
 }
+\value{
+NULL; Called for side effects
+}
 \description{
 Write a term and definition to an existing glossary file.
 }

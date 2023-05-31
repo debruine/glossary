@@ -7,7 +7,7 @@
 #' @param path the path to the glossary file; set default with \code{\link{glossary_path}}
 #' @param replace Whether to replace an existing definition
 #'
-#' @return NULL
+#' @return NULL; Called for side effects
 #' @export
 #'
 #' @examples

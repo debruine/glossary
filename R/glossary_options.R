@@ -43,7 +43,7 @@ glossary_options <- function (...) {
 #'
 #' Resets the list that collects glossary entries for the table.
 #'
-#' @return NULL
+#' @return NULL; Called for side effects
 #' @export
 #'
 #' @examples
