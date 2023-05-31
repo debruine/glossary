@@ -1,0 +1,23 @@
+{
+    "description": "Add glossaries to markdown and quarto documents by tagging individual words. Definitions can be provided inline or in a separate file.",
+    "license": "MIT",
+    "title": "glossary: Glossaries for Markdown and Quarto Documents",
+    "version": "1.0.0",
+    "upload_type": "software",
+    "publication_date": "2023-05-31",
+    "creators": [
+        {
+            "name": "Lisa DeBruine",
+            "affiliation": "University of Glasgow",
+            "orcid": "0000-0002-7523-5539"
+        }
+    ],
+    "access_right": "open",
+    "related_identifiers": [
+        {
+            "scheme": "url",
+            "identifier": "https://debruine.github.io/glossary/",
+            "relation": "isSupplementTo"
+        }
+    ]
+}
