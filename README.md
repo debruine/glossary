@@ -5,8 +5,10 @@
 
 <!-- badges: start -->
 
+[![DOI](https://zenodo.org/badge/642849670.svg)](https://zenodo.org/badge/latestdoi/642849670)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/glossary)](https://CRAN.R-project.org/package=glossary)
+![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/glossary)
 [![Codecov test
 coverage](https://codecov.io/gh/debruine/glossary/branch/master/graph/badge.svg)](https://app.codecov.io/gh/debruine/glossary?branch=master)
 <!-- badges: end -->
@@ -88,9 +90,9 @@ To calculate <a class='glossary'>power<span class="def">The probability
 of rejecting the null hypothesis when it is false, for a specific
 analysis, effect size, sample size, and criteria for
 significance.</span></a>, you need to know the intended sample size,
-expected <a class='glossary'>effect size<span class="def">'quantitative
+expected <a class='glossary'>effect size<span class="def">‘quantitative
 reflection of the magnitude of some phenomenon that is used for the
-purpose of addressing a question of interest' (Kelley & Preacher,
+purpose of addressing a question of interest’ (Kelley & Preacher,
 2012)</span></a> (e.g., <a class='glossary'>SESOI<span
 class="def">Smallest Effect Size of Interest: the smallest effect that
 is theoretically or practically meaningful \| See Equivalence Testing
