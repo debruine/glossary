@@ -1,3 +1,5 @@
+# glossary (development version)
+
 # glossary 1.0.0
 
 # glossary 0.0.0.9002
