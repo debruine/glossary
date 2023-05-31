@@ -75,13 +75,19 @@
 <dd><p>Whether to replace an existing definition</p></dd>
 
 </dl></div>
+    <div class="section level2">
+    <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
+    
+
+<p>NULL; Called for side effects</p>
+    </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># make a new glossary file</span></span></span>
 <span class="r-in"><span><span class="va">path</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempfile</a></span><span class="op">(</span><span class="st">"glossary"</span>, fileext <span class="op">=</span> <span class="st">".yml"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="glossary_path.html">glossary_path</a></span><span class="op">(</span><span class="va">path</span>, create <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> /tmp/RtmpPuSoAI/glossary185649a2a3f0.yml did not exist; it has been created</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> /tmp/RtmpoYCKa0/glossary1961270066b3.yml did not exist; it has been created</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># add an entry for "joins"</span></span></span>
 <span class="r-in"><span><span class="fu">glossary_add</span><span class="op">(</span><span class="st">"joins"</span>, <span class="st">"Ways to combine data from two tables"</span><span class="op">)</span></span></span>
