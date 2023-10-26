@@ -1,3 +1,10 @@
+test_that("exists", {
+  expect_type(glossary_reset, "closure")
+  expect_type(glossary_options, "closure")
+  expect_type(glossary_path, "closure")
+  expect_type(glossary_popup, "closure")
+})
+
 test_that("reset", {
   # reset the table
   glossary_reset()

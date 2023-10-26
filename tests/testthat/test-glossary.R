@@ -1,4 +1,6 @@
 test_that("errors", {
+  expect_type(glossary, "closure")
+
   # set up path to example glossary file
   path <- system.file("glossary.yml", package = "glossary")
   glossary_path(path)

@@ -1,4 +1,6 @@
 test_that("style", {
+  expect_type(glossary_style, "closure")
+
   path <- system.file("glossary.css", package = "glossary")
   css <- readLines(path)
   exp <- paste(css, collapse = "\n") |>
