@@ -129,3 +129,44 @@ glossary_popup <- function(popup) {
   popup <- match.arg(popup, c("click", "hover", "none"))
   glossary_options(popup = popup)
 }
+
+#' Set or get the path to a persistent table object
+#'
+#' Quarto books render each chapter in a separate environment, so you need to set a persistent table if you want to display all glossary items in a table in a separate chapter. Set the persistent table at the top of each chapter, after loading the glossary package, and it will automatically add any glossary entries to the persistent table.
+#'
+#' @param path the path to the persistent table, or TRUE for the default table name ("glossary-persistent.yml"), or FALSE for no persistence
+#'
+#' @return path to persistent table object, or FALSE if not set
+#' @export
+#'
+#' @examples
+#' p <- glossary_persistent() # get current path
+#'
+#' # set default persistent table path
+#' glossary_persistent(TRUE)
+#'
+#' # set non-default path
+#' glossary_persistent(p)
+glossary_persistent <- function(path) {
+  # get persistent path
+  if (missing(path)) {
+    return(glossary_options("persistent"))
+  }
+
+  if (isTRUE(path)) path <- "glossary-persistent.yml"
+
+  if (!isFALSE(path)) {
+    # make sure the file has a .yml extension
+    path <- gsub("(\\.yml)?$", "\\.yml", path, TRUE)
+  }
+
+  # set persistent path
+  glossary_options(persistent = path)
+
+  # load all from persistent path if file exists
+  if (!isFALSE(path) && file.exists(path)) {
+    glossary_load_all(path)
+  }
+
+  invisible(path)
+}

@@ -4,7 +4,8 @@
   op.glossary <- list(
     glossary.table = list(),
     glossary.path = NULL,
-    glossary.popup = "click"
+    glossary.popup = "click",
+    glossary.persistent = FALSE
   )
   toset <- !(names(op.glossary) %in% names(op))
   if(any(toset)) options(op.glossary[toset])

@@ -1,6 +1,6 @@
 #' Load all definitions
 #'
-#' Load all the definitions in a glossary file, usually for subsequent display using `glossary_table()`
+#' Load all the definitions in a glossary file, usually for subsequent display using \code{\link{glossary_table}}
 #'
 #' @param path The path to the glossary file; set default with \code{\link{glossary_path}}
 #'
@@ -21,14 +21,7 @@ glossary_load_all <- function(path = glossary_path()) {
   }
 
   gloss <- yaml::read_yaml(path)
-  tbl <- glossary_options("table")
-
-  # replaces any existing definitions with those from glossary file
-  for (term in names(gloss)) {
-    tbl[term] <- trimws(gloss[[term]])
-  }
-
-  glossary_options(table = tbl)
+  glossary_add_to_table(gloss)
 
   invisible(NULL)
 }

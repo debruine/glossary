@@ -2,8 +2,10 @@
 
 export(glossary)
 export(glossary_add)
+export(glossary_load_all)
 export(glossary_options)
 export(glossary_path)
+export(glossary_persistent)
 export(glossary_popup)
 export(glossary_reset)
 export(glossary_style)

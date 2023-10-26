@@ -2,6 +2,7 @@ path <- system.file("glossary.yml", package = "glossary")
 
 test_that("exists, default", {
   expect_type(glossary_load_all, "closure")
+  glossary_reset()
   glossary_path(path)
 
   glossary_load_all()
