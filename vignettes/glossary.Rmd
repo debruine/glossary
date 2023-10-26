@@ -137,5 +137,32 @@ glossary_table()
 
 You can reset the glossary table between sections with `glossary_reset()`.
 
+## Quarto Books
 
+Since quarto book chapters are each rendered in a new environment, you will need to load the glossary package for each chapter, and do any setup.
+
+First, if you're using the default 'click' popup style, append the glossary styles to a new or existing CSS file.
+
+```{r, eval = FALSE}
+# run in the console
+write(glossary_style(), "glossary.css", append = TRUE)
+```
+
+And add the CSS file to `_quarto.yml`. 
+
+``` yaml
+format:
+  html:
+    css: glossary.css
+```
+
+Start each chapter with a setup chunk that sets the appropriate defaults for your project.
+
+```{r, eval = FALSE}
+library(glossary)
+glossary_path("my_glossary.yml")
+glossary_persistent(TRUE)
+```
+
+Now, when you display the glossary table, it will show all items added since the last call to `glossary_reset()` in the project.
 
