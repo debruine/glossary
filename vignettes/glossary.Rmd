@@ -141,22 +141,25 @@ You can reset the glossary table between sections with `glossary_reset()`.
 
 Since quarto book chapters are each rendered in a new environment, you will need to load the glossary package for each chapter, and do any setup.
 
-First, if you're using the default 'click' popup style, append the glossary styles to a new or existing CSS file.
+The function `add_to_quarto()` will set this up for you (this function is still experimental, so make sure you've committed a version of your project before using). If your working directory is the quarto project, run the following code to set it up. This will create and link a css file to setup popup styles, and create a demo glossary.yml file if you don't already have one. It will also add the required setup code to a file called _setup.R, and source this file in the .Rprofile for this project, so that it will run before each chapter in the book.
 
 ```{r, eval = FALSE}
-# run in the console
-write(glossary_style(), "glossary.css", append = TRUE)
+add_to_quarto(quarto_dir = ".",
+              css_path = "glossary.css",
+              glossary_path = "glossary.yml",
+              script_path = "_setup.R")
 ```
 
-And add the CSS file to `_quarto.yml`. 
+You can set up a book in another directory by changing the `quarto_dir` argument. Specify an existing `css_path` to append the popup styles to it. You can also specify an existing glossary path. Set `script_path` to `FALSE` to use a different method for pre-chapter setup. 
 
-``` yaml
-format:
-  html:
-    css: glossary.css
+```{r, eval = FALSE}
+add_to_quarto(quarto_dir = "~/mybook",
+              css_path = "style.css",
+              glossary_path = "my_glossary.yml",
+              script_path = FALSE)
 ```
 
-Start each chapter with a setup chunk that sets the appropriate defaults for your project.
+If you don't use the .Rprofile and _setup.R script method, you will need to start each chapter with a setup chunk that sets the appropriate defaults for your project.
 
 ```{r, eval = FALSE}
 library(glossary)

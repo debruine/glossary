@@ -8,7 +8,8 @@ glossary_style(
   color = "purple",
   text_decoration = "underline",
   def_bg = "#333",
-  def_color = "white"
+  def_color = "white",
+  inline = TRUE
 )
 }
 \arguments{
@@ -19,6 +20,8 @@ glossary_style(
 \item{def_bg}{Background color of the definition pop-up}
 
 \item{def_color}{Text color of the definition pop-up}
+
+\item{inline}{If TRUE, includes \if{html}{\out{<style>}} tags and uses cat() to output the style, if FALSE, omits tags and returns text}
 }
 \value{
 A CSS style string
