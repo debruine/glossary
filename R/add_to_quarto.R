@@ -73,7 +73,7 @@ format:
       "# glossary setup - persistent across chapters\n",
       "library(glossary)\n",
       "glossary_path(\"", glossary_path, "\")\n",
-      "glossary_persistent(TRUE))\n"
+      "glossary_persistent(TRUE)\n"
     )
     spath <- file.path(quarto_dir, script_path)
 
