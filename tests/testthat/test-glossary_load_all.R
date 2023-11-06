@@ -7,7 +7,8 @@ test_that("exists, default", {
 
   glossary_load_all()
   tbl <- glossary_options("table")
-  expect_equal(names(tbl), c("alpha", "p-value", "effect size", "power", "SESOI", "html"))
+  expect_equal(names(tbl), c("alpha", "alpha (graphics)", "p-value",
+                             "effect size", "power", "SESOI", "html"))
 })
 
 test_that("specify path", {
@@ -18,7 +19,8 @@ test_that("specify path", {
   expect_error(glossary_load_all("x"), "The file x does not exist")
   glossary_load_all(path)
   tbl <- glossary_options("table")
-  expect_equal(names(tbl), c("alpha", "p-value", "effect size", "power", "SESOI", "html"))
+  expect_equal(names(tbl), c("alpha", "alpha (graphics)", "p-value",
+                             "effect size", "power", "SESOI", "html"))
 })
 
 test_that("pre-existing definition", {

@@ -75,6 +75,11 @@ test_that("path, click", {
   exp <- "<a class='glossary'>alpha<span class='def'>The threshold chosen in Neyman-Pearson hypothesis testing to distinguish test results that lead to the decision to reject the null hypothesis, or not, based on the desired upper bound of the Type 1 error rate. An alpha level of 5% is most commonly used, but other alpha levels can be used as long as they are determined and preregistered by the researcher before the data is analyzed.</span></a>"
   expect_equal(test, exp)
 
+  # secondary definition
+  test <- glossary("alpha (graphics)")
+  exp <- "<a class='glossary'>alpha (graphics)<span class='def'>A value between 0 and 1 used to control the levels of transparency in a plot</span></a>"
+  expect_equal(test, exp)
+
   # non-matching case
   test <- glossary("Alpha")
   exp <- "<a class='glossary'>Alpha<span class='def'>The threshold chosen in Neyman-Pearson hypothesis testing to distinguish test results that lead to the decision to reject the null hypothesis, or not, based on the desired upper bound of the Type 1 error rate. An alpha level of 5% is most commonly used, but other alpha levels can be used as long as they are determined and preregistered by the researcher before the data is analyzed.</span></a>"

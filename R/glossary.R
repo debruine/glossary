@@ -74,8 +74,10 @@ glossary <- function(term,
 
       def <- tryCatch({
         gloss <- yaml::read_yaml(path)
-        index <- grep(term, names(gloss), ignore.case = TRUE)
-        if (length(index)) term <- names(gloss)[index]
+        clean_term <- trimws(tolower(term))
+        clean_names <- trimws(tolower(names(gloss)))
+        index <- which(clean_term == clean_names)
+        if (length(index)) term <- names(gloss)[index[[1]]]
         trimws(gloss[[index]])
       },
       error = function(e) {
