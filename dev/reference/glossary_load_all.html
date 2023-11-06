@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">glossary</a>
 
-    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">1.0.0.9002</small>
+    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">1.0.0.9003</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -75,56 +75,25 @@
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">demo_glossary</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"glossary.yml"</span>, package <span class="op">=</span> <span class="st">"glossary"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu">glossary_load_all</span><span class="op">(</span><span class="va">demo_glossary</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="fu"><a href="glossary_table.html">glossary_table</a></span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;table class="table" style="margin-left: auto; margin-right: auto;"&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  &lt;thead&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   &lt;tr&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    &lt;th style="text-align:left;"&gt; term &lt;/th&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    &lt;th style="text-align:left;"&gt; definition &lt;/th&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   &lt;/tr&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  &lt;/thead&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;tbody&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   &lt;tr&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    &lt;td style="text-align:left;"&gt; SESOI &lt;/td&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    &lt;td style="text-align:left;"&gt; Smallest Effect Size of Interest: the smallest effect that is theoretically or practically meaningful</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> See [Equivalence Testing for Psychological Research](https://doi.org/10.1177/2515245918770963) for a tutorial on methods for choosing an SESOI. &lt;/td&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   &lt;/tr&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   &lt;tr&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    &lt;td style="text-align:left;"&gt; alpha &lt;/td&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    &lt;td style="text-align:left;"&gt; The threshold chosen in Neyman-Pearson hypothesis testing to distinguish test results that lead to the decision to reject the null hypothesis, or not, based on the desired upper bound of the Type 1 error rate. An alpha level of 5% is most commonly used, but other alpha levels can be used as long as they are determined and preregistered by the researcher before the data is analyzed. &lt;/td&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   &lt;/tr&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   &lt;tr&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    &lt;td style="text-align:left;"&gt; alpha (graphics) &lt;/td&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    &lt;td style="text-align:left;"&gt; A value between 0 and 1 used to control the levels of transparency in a plot &lt;/td&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   &lt;/tr&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   &lt;tr&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    &lt;td style="text-align:left;"&gt; effect size &lt;/td&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    &lt;td style="text-align:left;"&gt; 'quantitative reflection of the magnitude of some phenomenon that is used for the purpose of addressing a question of interest' (Kelley &amp;amp; Preacher, 2012) &lt;/td&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   &lt;/tr&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   &lt;tr&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    &lt;td style="text-align:left;"&gt; html &lt;/td&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    &lt;td style="text-align:left;"&gt; This is a paragraph with a [link](https://url.com).</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> And another paragraph before a list:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> * Item 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> * List 2 &lt;/td&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   &lt;/tr&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   &lt;tr&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    &lt;td style="text-align:left;"&gt; joins &lt;/td&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    &lt;td style="text-align:left;"&gt; Ways to combine data from two tables &lt;/td&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   &lt;/tr&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   &lt;tr&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    &lt;td style="text-align:left;"&gt; p-value &lt;/td&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    &lt;td style="text-align:left;"&gt; The probability of the observed data, or more extreme data, if the null hypothesis is true. The lower the p-value, the higher the test statistic, and less likely it is to observe the data if the null hypothesis is true. &lt;/td&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   &lt;/tr&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   &lt;tr&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    &lt;td style="text-align:left;"&gt; power &lt;/td&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    &lt;td style="text-align:left;"&gt; The probability of rejecting the null hypothesis when it is false, for a specific analysis, effect size, sample size, and criteria for significance. &lt;/td&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   &lt;/tr&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;/tbody&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;/table&gt;</span>
+<span class="r-in"><span><span class="fu"><a href="glossary_table.html">glossary_table</a></span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="co"># get table as a data frame</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                              term</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> SESOI                       SESOI</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> alpha                       alpha</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> alpha (graphics) alpha (graphics)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> effect size           effect size</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> html                         html</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> joins                       joins</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> p-value                   p-value</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> power                       power</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                                                                                                                                                                                                                                                                                                                                        definition</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> SESOI                                                                                                                                                    Smallest Effect Size of Interest: the smallest effect that is theoretically or practically meaningful\n\nSee [Equivalence Testing for Psychological Research](https://doi.org/10.1177/2515245918770963) for a tutorial on methods for choosing an SESOI.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> alpha            The threshold chosen in Neyman-Pearson hypothesis testing to distinguish test results that lead to the decision to reject the null hypothesis, or not, based on the desired upper bound of the Type 1 error rate. An alpha level of 5% is most commonly used, but other alpha levels can be used as long as they are determined and preregistered by the researcher before the data is analyzed.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> alpha (graphics)                                                                                                                                                                                                                                                                                                                     A value between 0 and 1 used to control the levels of transparency in a plot</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> effect size                                                                                                                                                                                                                                             'quantitative reflection of the magnitude of some phenomenon that is used for the purpose of addressing a question of interest' (Kelley &amp; Preacher, 2012)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> html                                                                                                                                                                                                                                                                                            This is a paragraph with a [link](https://url.com).\n\nAnd another paragraph before a list:\n\n* Item 1\n* List 2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> joins                                                                                                                                                                                                                                                                                                                                                                        Ways to combine data from two tables</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> p-value                                                                                                                                                                               The probability of the observed data, or more extreme data, if the null hypothesis is true. The lower the p-value, the higher the test statistic, and less likely it is to observe the data if the null hypothesis is true.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> power                                                                                                                                                                                                                                                        The probability of rejecting the null hypothesis when it is false, for a specific analysis, effect size, sample size, and criteria for significance.</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

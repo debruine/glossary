@@ -12,7 +12,7 @@ gives instructions to edit the _quarto.yml file accordingly."><meta property="og
     
     <a class="navbar-brand me-2" href="../index.html">glossary</a>
 
-    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">1.0.0.9002</small>
+    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">1.0.0.9003</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -92,7 +92,7 @@ gives instructions to edit the _quarto.yml file accordingly.</p>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>The _quarto.yml file is not edited for you because there is currently no way to do this that doesn't remove your formatting and comments from the file.</p>
-<p>Since quarto books render each chapter in a separate environment, it is helpful to have a pre-chapter script that does any common setup. The code below will be added to a new or existing pre-chapter script, and this script sourced in the .Rprofile for this project to allow for a persistent glossary. Set <code>script_path</code> to <code>FALSE</code> to handle this on your own.</p>
+<p>Since quarto books render each chapter in a separate environment, it is helpful to have a pre-chapter script that does any common setup. The code below will be added to a new or existing pre-chapter script, and this script sourced in the .Rprofile for this project to allow for a persistent glossary (this project .Rprofile will be run instead of your global .Rrofile). Set <code>script_path</code> to <code>FALSE</code> to handle this on your own.</p>
 <p></p><div class="sourceCode"><pre><code><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(glossary)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glossary_path</span>(<span class="st">"glossary.yml"</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">glossary_persistent</span>(<span class="cn">TRUE</span>)</span></code></pre><p></p></div>
