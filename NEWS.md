@@ -1,5 +1,9 @@
 # glossary (development version)
 
+# glossary 1.0.9003
+
+* Fixed a bug where terms could have multiple matches (e.g., "alpha" would match both "alpha" and "alpha (graphics)")
+
 # glossary 1.0.9002
 
 * Added `add_to_quarto()` to set up a quarto book with a persistent glossary

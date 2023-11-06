@@ -11,7 +11,7 @@
 #' demo_glossary <- system.file("glossary.yml", package = "glossary")
 #' glossary_load_all(demo_glossary)
 #'
-#' glossary_table()
+#' glossary_table(FALSE) # get table as a data frame
 glossary_load_all <- function(path = glossary_path()) {
   if (tolower(path) == "psyteachr") {
     stop("Cannot load all from the psyteachr glossary, please specify a path to a YAML glossary file")

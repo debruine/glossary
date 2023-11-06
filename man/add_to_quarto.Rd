@@ -30,7 +30,7 @@ gives instructions to edit the _quarto.yml file accordingly.
 \details{
 The _quarto.yml file is not edited for you because there is currently no way to do this that doesn't remove your formatting and comments from the file.
 
-Since quarto books render each chapter in a separate environment, it is helpful to have a pre-chapter script that does any common setup. The code below will be added to a new or existing pre-chapter script, and this script sourced in the .Rprofile for this project to allow for a persistent glossary. Set \code{script_path} to \code{FALSE} to handle this on your own.
+Since quarto books render each chapter in a separate environment, it is helpful to have a pre-chapter script that does any common setup. The code below will be added to a new or existing pre-chapter script, and this script sourced in the .Rprofile for this project to allow for a persistent glossary (this project .Rprofile will be run instead of your global .Rrofile). Set \code{script_path} to \code{FALSE} to handle this on your own.
 
 \if{html}{\out{<div class="sourceCode">}}\preformatted{library(glossary)
 glossary_path("glossary.yml")
