@@ -4,7 +4,7 @@
 #'
 #' @param term The term to define
 #' @param def The definition to add
-#' @param path the path to the glossary file; set default with \code{\link{glossary_path}}
+#' @param path The path to the glossary file; set default with \code{\link{glossary_path}}
 #' @param replace Whether to replace an existing definition
 #'
 #' @return NULL; Called for side effects

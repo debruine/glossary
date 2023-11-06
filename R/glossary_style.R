@@ -6,6 +6,7 @@
 #' @param text_decoration Style of the linked term; a valid CSS text-decoration string, such as "none", underline" or "red wavy underline"
 #' @param def_bg Background color of the definition pop-up
 #' @param def_color Text color of the definition pop-up
+#' @param inline If TRUE, includes <style> tags and uses cat() to output the style, if FALSE, omits tags and returns text
 #'
 #' @return A CSS style string
 #' @export
@@ -15,10 +16,10 @@
 glossary_style <- function(color = "purple",
                            text_decoration = "underline",
                            def_bg = "#333",
-                           def_color = "white") {
+                           def_color = "white",
+                           inline = TRUE) {
   style <- paste0(
-"<style>
-a.glossary {
+"a.glossary {
   color: ", color, ";
   text-decoration: ", text_decoration, ";
   cursor: help;
@@ -55,9 +56,14 @@ a.glossary:active .def::after {
   border-style: solid;
   border-color: ", def_bg, " transparent transparent transparent;
 }
-</style>
 ")
 
-  cat(style)
-  invisible(style)
+  if (isTRUE(inline)) {
+    style <- paste0("<style>\n", style, "</style>\n")
+    cat(style)
+    invisible(style)
+  } else {
+    # return style as text
+    style
+  }
 }

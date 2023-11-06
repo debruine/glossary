@@ -1,5 +1,15 @@
 # glossary (development version)
 
+# glossary 1.0.9002
+
+* Added `add_to_quarto()` to set up a quarto book with a persistent glossary
+* `glossary_style()` now has an `inline` argument (default TRUE) for easier use in creating inline css versus writing to a linked CSS file
+
+# glossary 1.0.9001
+
+* Added `glossary_load_all()` to load all definitions in a glossary file 
+* Added `glossry_persistent()` to create a persistent list of used definitions that loads between chapters when creating quarto books or other projects where definitions are added across multiple environments
+
 # glossary 1.0.0
 
 # glossary 0.0.0.9002

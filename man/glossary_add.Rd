@@ -11,7 +11,7 @@ glossary_add(term, def, path = glossary_path(), replace = FALSE)
 
 \item{def}{The definition to add}
 
-\item{path}{the path to the glossary file; set default with \code{\link{glossary_path}}}
+\item{path}{The path to the glossary file; set default with \code{\link{glossary_path}}}
 
 \item{replace}{Whether to replace an existing definition}
 }

@@ -1,9 +1,18 @@
 test_that("style", {
+  expect_type(glossary_style, "closure")
+
   path <- system.file("glossary.css", package = "glossary")
   css <- readLines(path)
+
+  # inline (default)
   exp <- paste(css, collapse = "\n") |>
     paste0("<style>\n", x = _, "\n</style>\n")
   test <- expect_output( glossary_style() )
+  expect_equal(test, exp)
+
+  # not inline
+  exp <- paste(css, collapse = "\n") |> paste0("\n")
+  test <- glossary_style(inline = FALSE)
   expect_equal(test, exp)
 
   test <- expect_output(

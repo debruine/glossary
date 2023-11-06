@@ -1,4 +1,6 @@
-test_that("x", {
+test_that("exists", {
+  expect_type(glossary_add, "closure")
+
   glossary_popup("hover")
   gloss <- tempfile(fileext = ".yml")
   on.exit(unlink(gloss))

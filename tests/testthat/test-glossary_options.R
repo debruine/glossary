@@ -1,4 +1,34 @@
+test_that("persistent", {
+  expect_type(glossary_persistent, "closure")
+  glossary_reset()
+
+  p <- glossary_options("persistent")
+  expect_false(p)
+
+  p2 <- glossary_persistent()
+  expect_false(p2)
+
+  glossary_persistent(TRUE)
+  p3 <- glossary_persistent()
+  expect_equal(p3, "glossary-persistent.yml")
+
+  path <- tempfile("persistent", fileext = ".yml")
+  glossary_persistent(path)
+  p4 <- glossary_persistent()
+  expect_equal(p4, path)
+
+  sink <- glossary("hi", def = "test definition")
+  yml <- yaml::read_yaml(path)
+  expect_equal(yml, list(hi = "test definition"))
+
+  glossary_persistent(FALSE)
+  p5 <- glossary_persistent()
+  expect_false(p5)
+})
+
 test_that("reset", {
+  expect_type(glossary_reset, "closure")
+
   # reset the table
   glossary_reset()
   table <- glossary_options("table")
@@ -17,6 +47,8 @@ test_that("reset", {
 
 
 test_that("path", {
+  expect_type(glossary_path, "closure")
+
   # psyteachr
   glossary_path("psyteachr")
   path <- glossary_path()
@@ -58,6 +90,8 @@ test_that("path", {
 })
 
 test_that("popup", {
+  expect_type(glossary_popup, "closure")
+
   glossary_path(NULL)
 
   glossary_popup("hover")
@@ -83,10 +117,13 @@ test_that("popup", {
 })
 
 test_that("options", {
+  expect_type(glossary_options, "closure")
+
   # set options
   glossary_reset()
   glossary_path("psyteachr")
   glossary_popup("none")
+  glossary_persistent(FALSE)
 
   # get all options as a list
   opts <- glossary_options()
@@ -94,11 +131,13 @@ test_that("options", {
   expect_equal(opts$popup, "none")
   expect_equal(opts$table, list())
   expect_equal(opts$path, "psyteachr")
+  expect_equal(opts$persistent, FALSE)
 
   # get individual options
   expect_equal(glossary_options("popup"), "none")
   expect_equal(glossary_options("table"), list())
   expect_equal(glossary_options("path"), "psyteachr")
+  expect_equal(glossary_options("persistent"), FALSE)
 
   # set arbitrary options
   glossary_options(new = "hi")

@@ -93,9 +93,9 @@ glossary <- function(term,
 
   ## add to global glossary for this book
   if (add_to_table) {
-    tbl <- glossary_options("table")
-    tbl[term] <- def
-    glossary_options(table = tbl)
+    gloss <- list(def)
+    names(gloss) <- term
+    glossary_add_to_table(gloss)
   }
 
   # set text
@@ -124,6 +124,25 @@ glossary <- function(term,
   }
 
   return(text)
+}
+
+#' Add terms and definitions to table
+#'
+#' @param gloss a named list(term = def)
+#'
+#' @return NULL; called for side effects
+glossary_add_to_table <- function(gloss) {
+  tbl <- glossary_options("table")
+  for (term in names(gloss)) {
+    tbl[term] <- trimws(gloss[[term]])
+  }
+  glossary_options(table = tbl)
+
+  persistent_path <- glossary_persistent()
+
+  if (!isFALSE(persistent_path)) {
+    write_yaml(tbl, persistent_path)
+  }
 }
 
 
